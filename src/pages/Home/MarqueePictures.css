@@ -1,0 +1,41 @@
+.movingPics-container {
+  width: 100%;
+  position: relative;
+  padding: 1.2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(9, 320px);
+  column-gap: 0.15rem;
+  overflow: hidden;
+}
+
+.MovingPics {
+  width: 100%;
+  height: 100%;
+  animation: movingPics 14s linear infinite;
+}
+
+@keyframes movingPics {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .movingPics-container {
+    width: 100%;
+    grid-template-columns: repeat(9, 320px);
+
+    overflow: hidden;
+  }
+
+  .MovingPics {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: movingPics 14s linear infinite;
+  }
+}

@@ -1,0 +1,181 @@
+.glowing-border {
+  --gradient-glow: var(--clr-1), var(--clr-2), var(--clr-3), var(--clr-4),
+    var(--clr-5), var(--clr-1);
+
+  max-width: 35ch;
+  padding: 1rem 1.5rem;
+  margin-block: 1rem;
+
+  font-family: general sans;
+  border: 1px solid transparent;
+  border-radius: 0 100vw 100vw 0;
+  border-left: 0;
+
+  background: linear-gradient(canvas 0) padding-box,
+    conic-gradient(from var(--glow-deg), var(--gradient-glow)) border-box;
+
+  position: relative;
+  isolation: isolate;
+
+  animation: glow-clr 10s infinite linear;
+  overflow: hidden;
+}
+
+.glowing-border.right {
+  margin-inline-start: auto;
+  border: 1px solid transparent;
+  border-radius: 100vw 0vw 0vw 100vw;
+  overflow: hidden;
+  border-right: 0;
+  padding-left: 3rem;
+  &::before {
+    transform-origin: right;
+  }
+}
+
+.glowing-border h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.85rem;
+}
+
+.glowing-border p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+@keyframes glow-clr {
+  100% {
+    --glow-deg: 270deg;
+  }
+}
+
+.glowing-border::before,
+.glowing-border::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.glowing-border::before {
+  background: linear-gradient(canvas 0);
+  inset: 1rem;
+  scale: 1.2 1;
+  transform-origin: right;
+  z-index: -1;
+  filter: blur(2rem);
+}
+
+.glowing-border::after {
+  inset: 1rem;
+  background: conic-gradient(from var(--glow-deg), var(--gradient-glow));
+  z-index: -2;
+  filter: blur(2rem);
+  opacity: 0.25;
+}
+
+@property --clr-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: red;
+}
+
+@property --clr-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: yellow;
+}
+
+@property --clr-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: green;
+}
+
+@property --clr-4 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: blue;
+}
+
+@property --clr-5 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: purple;
+}
+
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: -90deg;
+}
+
+@media (width >= 500px) {
+  .glowing-border {
+    margin-block: 3rem;
+    padding: 5rem 2rem;
+    max-width: 65ch;
+  }
+
+  .glowing-border p {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .glowing-border h1 {
+    font-size: 2.25rem;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+  }
+
+  .glowing-border.right {
+    margin-inline-start: auto;
+    border: 1px solid transparent;
+    border-radius: 100vw 0vw 0vw 100vw;
+    overflow: hidden;
+    border-right: 0;
+
+    &::before {
+      transform-origin: right;
+    }
+  }
+}
+
+/* @media (max-width: 600px) {
+  .glowing-border {
+    max-width: 30ch;
+    padding: 1rem 1.5rem;
+    margin: 0.75rem 0rem;
+  }
+
+  .glowing-border p {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+
+  .glowing-border h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.85rem;
+  }
+
+  .glowing-border.right {
+    margin-inline-start: auto;
+    border: 1px solid transparent;
+    border-radius: 100vw 0vw 0vw 100vw;
+    overflow: hidden;
+    border-right: 0;
+    padding: 1rem 0.75rem;
+    padding-left: 3rem;
+
+    &::before {
+      transform-origin: right;
+    }
+  }
+} */

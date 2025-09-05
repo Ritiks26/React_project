@@ -1,0 +1,234 @@
+.mid-section {
+  background-color: var(--clr-lightgrey-500);
+  border-radius: 20px;
+  padding: 1rem 0.75rem;
+}
+
+.USP h1 {
+  text-align: center;
+  font-family: waterfall;
+  font-weight: bolder;
+  font-size: 8rem;
+  margin: 0;
+
+  background-image: linear-gradient(90deg, red, violet, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-E {
+  display: inline-block;
+  filter: blur(12px);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.589),
+    rgba(238, 130, 238, 0.797)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: blurReveal linear forwards;
+  animation-timeline: view();
+  animation-range-start: contain 25vh;
+  animation-range-end: contain 40vh;
+}
+
+.text-ELL {
+  display: inline-block;
+  filter: blur(12px);
+  background-image: linear-gradient(90deg, rgba(0, 0, 255, 0.641), violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: blurReveal linear forwards;
+  animation-timeline: view();
+  animation-range-start: contain 25vh;
+  animation-range-end: contain 40vh;
+}
+
+.text-ITY {
+  display: inline-block;
+  filter: blur(12px);
+  background-image: linear-gradient(90deg, violet, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: blurReveal linear forwards;
+  animation-timeline: view();
+  animation-range-start: contain 25vh;
+  animation-range-end: contain 40vh;
+}
+
+@keyframes blurReveal {
+  to {
+    filter: blur(0px);
+  }
+}
+
+.USP h5 {
+  text-align: center;
+  font-family: clash display;
+}
+
+.USP p {
+  text-align: center;
+  font-family: general sans;
+  color: rgba(37, 37, 37, 0.69);
+  background-image: linear-gradient(black, black);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: currentColor;
+  animation: scroll linear forwards;
+  animation-timeline: view();
+}
+
+.USP p {
+  animation-range-start: contain 10vh;
+  animation-range-end: contain 50vh;
+}
+
+@keyframes scroll {
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+/* BENTO GRID STYLING */
+
+.bento-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.column-number-1 {
+  display: flex;
+  height: 37vh;
+  padding: 0.5rem 0.75rem;
+}
+
+.first-column-grid .large-pic {
+  height: 192px;
+  border-radius: 10px;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+}
+
+.first-column-grid-row {
+  display: flex;
+  column-gap: 0.2rem;
+}
+
+.first-column-grid .small-pic {
+  height: 94px;
+  width: 169px;
+  border-radius: 10px;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+}
+
+.second-column-grid {
+  display: flex;
+  height: 385px;
+  width: 170px;
+  margin: 0rem 0.15rem;
+}
+
+.second-column-grid .small-pic {
+  height: 94px;
+  width: 170px;
+  border-radius: 10px;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+}
+
+.column-number-2 {
+  display: flex;
+  height: 46vh;
+  padding: 0.5rem 0.75rem;
+}
+
+.column-number-2 .first-column-grid .large-pic {
+  height: 290px;
+  width: 500px;
+}
+
+@media (max-width: 600px) {
+  .USP h1 {
+    font-size: 2.25rem;
+  }
+
+  .USP h5 {
+    font-size: 0.85rem;
+    margin: 0.75rem 0rem;
+  }
+
+  .USP p {
+    font-size: 0.8rem;
+  }
+
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .column-number-1 {
+    display: flex;
+    justify-content: center;
+    height: 27vh;
+  }
+
+  .first-column-grid .large-pic {
+    height: 18vh;
+    width: 60vw;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .first-column-grid-row {
+    display: flex;
+    height: 8.75vh;
+    width: 60vw;
+    column-gap: 0.2rem;
+  }
+
+  .first-column-grid .small-pic {
+    height: auto;
+    width: 60vw;
+    border-radius: 8px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .second-column-grid {
+    display: flex;
+    height: 6vh;
+    width: 60vw;
+    margin: 0rem 0.15rem;
+  }
+
+  .second-column-grid .small-pic {
+    height: 8.75vh;
+    width: 30vw;
+    border-radius: 8px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .column-number-2 {
+    display: flex;
+    justify-content: center;
+    height: 22vh;
+  }
+
+  .column-number-2 .first-column-grid .large-pic {
+    height: auto;
+    width: 70vw;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .column-number-2 .second-column-grid .small-pic {
+    height: 7.4vh;
+    width: 20vw;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}

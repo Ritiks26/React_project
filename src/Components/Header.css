@@ -1,0 +1,389 @@
+header {
+  height: 70px;
+  width: 100%;
+  /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--clr-white-full);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  margin: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid lightgrey;
+
+  @media (width > 500px) {
+    header {
+      height: 70px;
+      width: 100%;
+    }
+
+    .left-section img {
+      height: 80px;
+      width: 100%;
+    }
+
+    nav {
+      display: block;
+    }
+
+    .input-container {
+      display: block;
+    }
+
+    .user-options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      box-sizing: border-box;
+      height: 45px;
+      width: 120px;
+
+      border: none;
+      padding: 0rem 1rem;
+      border-radius: 14px;
+      background-color: #222;
+      /* background-color: var(--clr-red-500); */
+      /* background-image: radial-gradient(circle at center, red, #222); */
+    }
+
+    .user-options .login-account img {
+      height: 25px;
+      width: 100%;
+    }
+
+    .user-options .cart-svg {
+      height: 25px;
+      width: 100%;
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+
+    .cart-counts {
+      height: 18px;
+      width: 18px;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.left-section {
+  height: auto;
+  width: 70px;
+}
+
+.left-section img {
+  height: 70px;
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+.right-section-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-bar {
+  height: 40px;
+  min-width: 300px;
+  padding: 0.15rem 0rem;
+  padding-left: 2.25rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-family: general sans;
+  background-color: #f4f4f4;
+  border: none;
+  color: var(--clr-black-full);
+}
+
+.input-container {
+  display: none;
+  position: relative;
+}
+
+.search-bar::placeholder {
+  color: rgb(66, 66, 66);
+  font-size: 1rem;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.search-icon {
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.user-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  box-sizing: border-box;
+  height: 45px;
+  width: 150px;
+
+  border: none;
+  padding: 0rem 1rem;
+  border-radius: 14px;
+  background-color: #222;
+  /* background-color: var(--clr-red-500); */
+  /* background-image: radial-gradient(circle at center, red, #222); */
+}
+
+.login-account {
+  position: relative;
+}
+
+.login-svg {
+  height: 24px;
+  width: 100%;
+}
+
+.carts {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.cart-svg {
+  height: 24px;
+  width: 100%;
+}
+
+.cart-counts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 0.75rem;
+  font-family: general sans;
+  background-color: #000000;
+  color: #d3d3d3;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+
+  padding: 0.1rem;
+}
+
+.hamburger-menu img {
+  height: 25px;
+  width: 100%;
+}
+
+nav {
+  display: none;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0rem 1rem;
+  gap: 1.25rem;
+}
+
+ul li {
+  position: relative;
+}
+
+.all-lists {
+  text-decoration: none;
+  color: var(--clr-black-full);
+  font-family: general sans;
+  font-weight: 300;
+  transition: 0.15s;
+
+  /* border-radius: 30%;
+
+  border: 1px solid black;
+  padding: 0.45rem 0.45rem; */
+}
+
+.all-lists:hover {
+  text-decoration: none;
+  color: var(--clr-red-500);
+  cursor: pointer;
+
+  /* padding: 1.5rem 0rem;
+  color: var(--clr-whitesmoke-500);
+  background-color: var(--clr-red-500); */
+}
+
+.all-lists::before {
+  position: absolute;
+  bottom: -18px;
+  /* left: 0%; */
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-red-500);
+  pointer-events: none;
+}
+
+.all-lists:hover::before {
+  opacity: 1;
+  animation: movingPoint 0.15s forwards;
+}
+
+.all-lists:not(:hover)::before {
+  animation: removingPoint 0.15s forwards;
+}
+
+@keyframes movingPoint {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 45%;
+  }
+}
+
+/* @keyframes removingPoint {
+  from {
+    left: 40%;
+    opacity: 1;
+  }
+
+  to {
+    left: 90%;
+    opacity: 0;
+   }
+} */
+
+@keyframes removingPoint {
+  0% {
+    left: 45%;
+    opacity: 1;
+  }
+
+  25% {
+    left: 60%;
+    opacity: 1;
+  }
+
+  66% {
+    left: 80%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.dropdown {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 97vw;
+  height: 26vh;
+  color: black;
+
+  padding: 1rem;
+
+  align-items: center;
+
+  top: 70px;
+  left: 0;
+  right: 0;
+
+  background-color: var(--clr-whitesmoke-500);
+}
+
+.dropdown li {
+  font-size: 0.9rem;
+  font-family: general sans;
+  cursor: pointer;
+
+  width: fit-content;
+}
+
+.dropdown li:hover {
+  color: var(--clr-red-500);
+  transition: 0.2ms ease-in-out;
+}
+
+nav li:hover .dropdown {
+  display: flex;
+}
+
+nav li:hover .dropdown li a {
+  animation: dropdown 0.95s forwards;
+}
+
+@keyframes dropdown {
+  from {
+    transform: translateY(-20%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-slide {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden;
+
+  font-family: general sans;
+  font-weight: 500;
+  font-size: 3rem;
+  padding: 2rem 0rem;
+  background-color: #ffffff;
+  backdrop-filter: blur(2px);
+  transform: translateX(200%);
+  z-index: 15;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+}
+
+.mobile-menu-slide ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.menu-nav-link {
+  text-decoration: none;
+  color: black;
+  width: fit-content;
+}
+
+.remove-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  border: 1px solid;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+
+  top: 5%;
+  right: 8%;
+}
