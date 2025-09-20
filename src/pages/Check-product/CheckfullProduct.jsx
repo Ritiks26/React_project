@@ -82,10 +82,7 @@ export function CheckfullProduct({ cart, setCart, totalQuantity }) {
       if (existingItemIndex !== -1) {
         const updatedCart = [...cart];
         updatedCart[existingItemIndex].quantity += quantity;
-        console.log(
-          "👉 updated existing item:",
-          updatedCart[existingItemIndex]
-        );
+        console.log(updatedCart[existingItemIndex]);
 
         return updatedCart;
       } else {
@@ -98,7 +95,6 @@ export function CheckfullProduct({ cart, setCart, totalQuantity }) {
           quantity: quantity,
           priceRupees: matchingProduct.priceRupees,
         };
-        console.log("👉 added new item:", cartItems);
         return [...cart, cartItems];
       }
     });
