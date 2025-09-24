@@ -3,12 +3,24 @@ import { ScrollToTop } from "./Components/ScrollToTop";
 import { HomePage } from "./pages/Home/HomePage";
 import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
 import { LoginPage } from "./Components/LoginPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CheckfullProduct } from "./pages/Check-product/CheckfullProduct";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  const loadCart = async () => {
+    const response = await axios.get(
+      "http://localhost:9000/cart?expand=products"
+    );
+    setCart(response.data);
+  };
+
+  useEffect(() => {
+    loadCart();
+  }, []);
 
   let totalQuantity = 0;
   cart.map((cartItems) => {
@@ -19,7 +31,12 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route index element={<HomePage totalQuantity={totalQuantity} />} />
+        <Route
+          index
+          element={
+            <HomePage totalQuantity={totalQuantity} loadCart={loadCart} />
+          }
+        />
         <Route
           path="checkout"
           element={
@@ -27,6 +44,7 @@ function App() {
               cart={cart}
               setCart={setCart}
               totalQuantity={totalQuantity}
+              loadCart={loadCart}
             />
           }
         />
@@ -38,6 +56,7 @@ function App() {
               cart={cart}
               setCart={setCart}
               totalQuantity={totalQuantity}
+              loadCart={loadCart}
             />
           }
         />

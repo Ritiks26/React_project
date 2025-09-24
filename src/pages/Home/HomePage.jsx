@@ -10,7 +10,7 @@ import {
 import { GlowingSuggestionsRight } from "../../Components/GlowingSuggestionsRight";
 import { BentoGrid } from "./BentoGrid";
 
-export function HomePage({ totalQuantity }) {
+export function HomePage({ totalQuantity, loadCart }) {
   return (
     <>
       <title>RSNB</title>

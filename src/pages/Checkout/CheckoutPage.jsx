@@ -2,45 +2,35 @@ import { formatMoney } from "../utils/money";
 import { Link } from "react-router";
 import { Header } from "../../Components/Header";
 import "./CheckoutPage.css";
+import axios from "axios";
 
-export function CheckoutPage({ cart, setCart, totalQuantity }) {
-  const increaseQuantity = (productId, size, colour) => {
-    setCart((cart) =>
-      cart.map((cartItems) =>
-        cartItems.productId === productId &&
-        cartItems.size === size &&
-        cartItems.colour === colour
-          ? { ...cartItems, quantity: cartItems.quantity + 1 }
-          : cartItems
-      )
-    );
-  };
-
-  const decreaseQuantity = (productId, size, colour) => {
-    setCart((cart) =>
-      cart
-        .map((cartItems) =>
-          cartItems.productId === productId &&
-          cartItems.size === size &&
-          cartItems.colour === colour
-            ? { ...cartItems, quantity: cartItems.quantity - 1 }
-            : cartItems
-        )
-        .filter((cartItem) => cartItem.quantity > 0)
-    );
-  };
-
+export function CheckoutPage({ cart, totalQuantity, loadCart }) {
   let productCost = 0;
   let discount = 0;
   let tax = 0;
   let totalCost = 0;
 
   cart.map((cartItems) => {
-    productCost += cartItems.priceRupees * cartItems.quantity;
+    productCost += cartItems.product.priceRupees * cartItems.quantity;
     discount = productCost * discount;
     tax = productCost * 0.12;
     totalCost = productCost - discount + tax;
   });
+
+  const updateQuantity = async (id, quantity, colour, size) => {
+    if (quantity <= 0) {
+      await axios.delete(
+        `http://localhost:9000/cart/${id}?colour=${colour}&size=${size}`
+      );
+    } else {
+      await axios.put(`http://localhost:9000/cart/${id}`, {
+        quantity: quantity,
+        color: colour,
+        size: size,
+      });
+    }
+    await loadCart();
+  };
 
   return (
     <>
@@ -75,16 +65,16 @@ export function CheckoutPage({ cart, setCart, totalQuantity }) {
             <div className="cart-container">
               {cart.map((cartItems) => (
                 <div
-                  key={cartItems.productName}
+                  key={cartItems.product.productName}
                   className="cart-detail-combine"
                 >
                   <div className="cart-summary">
                     <div className="cart-product-image">
-                      <img src={cartItems.image} />
+                      <img src={cartItems.product.image} />
                     </div>
                     <div className="cart-item-detail">
                       <p className="cart-product-name">
-                        {cartItems.productName}
+                        {cartItems.product.name}
                       </p>
 
                       <div className="product-quick-details">
@@ -98,7 +88,7 @@ export function CheckoutPage({ cart, setCart, totalQuantity }) {
                         <div className="quick-colour-detail">
                           <div className="colour-option">COLOUR:</div>
                           <div className="colour-value">
-                            {cartItems.colour.toUpperCase()}
+                            {cartItems.color.toUpperCase()}
                           </div>
                         </div>
                       </div>
@@ -107,7 +97,7 @@ export function CheckoutPage({ cart, setCart, totalQuantity }) {
                   <div className="last-cart-detail">
                     <div className="product-price-container">
                       <p className="product-price">
-                        {formatMoney(cartItems.priceRupees)}
+                        {formatMoney(cartItems.product.priceRupees)}
                       </p>
                     </div>
 
@@ -117,26 +107,28 @@ export function CheckoutPage({ cart, setCart, totalQuantity }) {
                         <div className="edit-quantity">
                           <div
                             className="decrease-quick-quantity"
-                            onClick={() =>
-                              decreaseQuantity(
-                                cartItems.productId,
-                                cartItems.size,
-                                cartItems.colour
-                              )
-                            }
+                            onClick={() => {
+                              updateQuantity(
+                                cartItems.id,
+                                cartItems.quantity - 1,
+                                cartItems.color,
+                                cartItems.size
+                              );
+                            }}
                           >
                             -
                           </div>
                           {cartItems.quantity}
                           <div
                             className="increase-quick-quantity"
-                            onClick={() =>
-                              increaseQuantity(
-                                cartItems.productId,
-                                cartItems.size,
-                                cartItems.colour
-                              )
-                            }
+                            onClick={() => {
+                              updateQuantity(
+                                cartItems.id,
+                                cartItems.quantity + 1,
+                                cartItems.color,
+                                cartItems.size
+                              );
+                            }}
                           >
                             +
                           </div>

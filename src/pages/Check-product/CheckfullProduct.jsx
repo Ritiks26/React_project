@@ -1,7 +1,8 @@
 import { Header } from "../../Components/Header";
 import "./CheckfullProduct.css";
+import axios from "axios";
 import { useParams, useNavigate } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import rightChevron from "../../assets/rightslider.svg";
 import leftChevron from "../../assets/leftslider.svg";
 import {
@@ -11,10 +12,10 @@ import {
 } from "../../../data/products";
 import { formatMoney } from "../utils/money";
 
-export function CheckfullProduct({ cart, setCart, totalQuantity }) {
+export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
   const [quantity, setQuantity] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedColour, setselectedColour] = useState(null);
+  const [selectedColour, setSelectedColour] = useState(null);
   const [showSizeMessage, setShowSizeMessage] = useState(false);
   const [showColourMessage, setShowColourMessage] = useState(false);
   const [showQuantityMessage, setShowQuantityMessage] = useState(false);
@@ -35,9 +36,7 @@ export function CheckfullProduct({ cart, setCart, totalQuantity }) {
     cartQuantity += cartItems.quantity;
   });
 
-  const addToCart = () => {
-    console.log("addtocart-", selectedSize, selectedColour, quantity);
-
+  const addToCart = async () => {
     if (!selectedSize) {
       setShowSizeMessage(true);
 
@@ -68,36 +67,13 @@ export function CheckfullProduct({ cart, setCart, totalQuantity }) {
       return;
     }
 
-    // setCart((cart) => [...cart, cartItems]);
-
-    setCart((cart) => {
-      console.log(" current cart:", cart);
-      const existingItemIndex = cart.findIndex(
-        (items) =>
-          items.productId === productId &&
-          items.size === selectedSize &&
-          items.colour === selectedColour
-      );
-
-      if (existingItemIndex !== -1) {
-        const updatedCart = [...cart];
-        updatedCart[existingItemIndex].quantity += quantity;
-        console.log(updatedCart[existingItemIndex]);
-
-        return updatedCart;
-      } else {
-        const cartItems = {
-          productName: matchingProduct.name,
-          productId: productId,
-          image: matchingProduct.image,
-          size: selectedSize,
-          colour: selectedColour,
-          quantity: quantity,
-          priceRupees: matchingProduct.priceRupees,
-        };
-        return [...cart, cartItems];
-      }
+    await axios.post("http://localhost:9000/cart", {
+      productId: matchingProduct.id,
+      quantity,
+      color: selectedColour,
+      size: selectedSize,
     });
+    await loadCart();
 
     navigate("/checkout");
   };
@@ -173,7 +149,7 @@ export function CheckfullProduct({ cart, setCart, totalQuantity }) {
                     className={`colour-selection ${color} ${
                       selectedColour === color ? "active" : ""
                     }`}
-                    onClick={() => setselectedColour(color)}
+                    onClick={() => setSelectedColour(color)}
                   ></div>
                 ))}
               </div>
