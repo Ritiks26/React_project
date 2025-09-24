@@ -1,3 +1,10 @@
 {
-  "cart": []
+  "cart": [
+    {
+      "id": "006",
+      "quantity": 1,
+      "color": "dusty-rose",
+      "size": "L"
+    }
+  ]
 }
