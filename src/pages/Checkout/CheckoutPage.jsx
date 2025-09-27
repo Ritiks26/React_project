@@ -64,7 +64,10 @@ export function CheckoutPage({ cart, totalQuantity, loadCart }) {
           <div className="cart-payment-summary">
             <div className="cart-container">
               {cart.map((cartItems) => (
-                <div key={cartItems.product.id} className="cart-detail-combine">
+                <div
+                  key={`${cartItems.id}-${cartItems.color}-${cartItems.size}`}
+                  className="cart-detail-combine"
+                >
                   <div className="cart-summary">
                     <div className="cart-product-image">
                       <img src={cartItems.product.image} />

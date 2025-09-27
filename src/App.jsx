@@ -9,7 +9,23 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [productsMore, setProductsMore] = useState([]);
+  const [productsMoreLast, setProductsMoreLast] = useState([]);
   const [cart, setCart] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:9000/products").then((response) => {
+      setProducts(response.data);
+    });
+
+    axios.get("http://localhost:9000/products-More").then((response) => {
+      setProductsMore(response.data);
+    });
+
+    axios.get("http://localhost:9000/products-more-last").then((response) => {
+      setProductsMoreLast(response.data);
+    });
+  }, []);
 
   const loadCart = async () => {
     const response = await axios.get(
@@ -34,7 +50,13 @@ function App() {
         <Route
           index
           element={
-            <HomePage totalQuantity={totalQuantity} loadCart={loadCart} />
+            <HomePage
+              totalQuantity={totalQuantity}
+              products={products}
+              productsMore={productsMore}
+              productsMoreLast={productsMoreLast}
+              loadCart={loadCart}
+            />
           }
         />
         <Route
@@ -57,6 +79,9 @@ function App() {
               setCart={setCart}
               totalQuantity={totalQuantity}
               loadCart={loadCart}
+              products={products}
+              productsMore={productsMore}
+              productsMoreLast={productsMoreLast}
             />
           }
         />

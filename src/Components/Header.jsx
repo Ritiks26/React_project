@@ -11,6 +11,7 @@ import gsap from "gsap";
 export function Header({ totalQuantity }) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const mobileMenuRef = useRef();
+  const dropMenuRef = useRef();
   const t1 = useRef();
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export function Header({ totalQuantity }) {
               <a href="#" className="all-lists">
                 Brands
               </a>
-              <ul className="dropdown">
+              <ul className="dropdown" ref={dropMenuRef}>
                 <li>
                   <a href="#"></a>H&M
                 </li>

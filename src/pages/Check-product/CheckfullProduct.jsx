@@ -1,24 +1,27 @@
 import { Header } from "../../Components/Header";
-import "./CheckfullProduct.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import rightChevron from "../../assets/rightslider.svg";
 import leftChevron from "../../assets/leftslider.svg";
-import {
+import { formatMoney } from "../utils/money";
+import "./CheckfullProduct.css";
+
+export function CheckfullProduct({
+  cart,
+  totalQuantity,
+  loadCart,
   products,
   productsMore,
   productsMoreLast,
-} from "../../../data/products";
-import { formatMoney } from "../utils/money";
-
-export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
+}) {
   const [quantity, setQuantity] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedColour, setSelectedColour] = useState(null);
+  const [selectedColour, setSelectedColour] = useState();
   const [showSizeMessage, setShowSizeMessage] = useState(false);
   const [showColourMessage, setShowColourMessage] = useState(false);
   const [showQuantityMessage, setShowQuantityMessage] = useState(false);
+  const [changeProductColor, setChangeProductColor] = useState(0);
   const { productId } = useParams();
   const navigate = useNavigate();
 
@@ -72,6 +75,7 @@ export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
       quantity,
       color: selectedColour,
       size: selectedSize,
+      image: matchingProduct.colors[changeProductColor].image,
     });
     await loadCart();
 
@@ -82,13 +86,31 @@ export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
 
   let matchingProduct = allProducts.find((product) => product.id === productId);
 
+  useEffect(() => {
+    if (matchingProduct && matchingProduct.colors?.length > 0) {
+      setSelectedColour(matchingProduct.colors[0].name);
+      setChangeProductColor(0);
+    }
+  }, [matchingProduct]);
+
+  if (!matchingProduct) {
+    return <div style={{ fontFamily: "general sans" }}>Loading Product...</div>;
+  }
+
   return (
     <>
       <title>Product</title>
       <Header totalQuantity={totalQuantity} />
       <div className="full-products-container">
         <div className="product-image">
-          <img src={matchingProduct.image} alt="" />
+          <img
+            src={
+              matchingProduct.colors
+                ? matchingProduct.colors[changeProductColor].image
+                : "no image"
+            }
+            alt=""
+          />
           {/* <div className="right-slider">
             <img src={"/"} />
           </div>
@@ -126,7 +148,7 @@ export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
             <div className="size-selection-container">
               SIZE:
               <div className="select-size">
-                {["S", "M", "L", "XL", "XXL"].map((size) => (
+                {matchingProduct.sizes.map((size) => (
                   <div
                     key={size}
                     className={`size-selection ${
@@ -143,13 +165,16 @@ export function CheckfullProduct({ cart, setCart, totalQuantity, loadCart }) {
             <div className="colour-selection-container">
               COLOUR:
               <div className="select-colour">
-                {["white", "black", "dusty-rose"].map((color) => (
+                {matchingProduct.colors.map((color, index) => (
                   <div
-                    key={color}
-                    className={`colour-selection ${color} ${
-                      selectedColour === color ? "active" : ""
+                    key={color.name}
+                    className={`colour-selection ${color.name} ${
+                      selectedColour === color.name ? "active" : ""
                     }`}
-                    onClick={() => setSelectedColour(color)}
+                    onClick={() => {
+                      setSelectedColour(color.name);
+                      setChangeProductColor(index);
+                    }}
                   ></div>
                 ))}
               </div>

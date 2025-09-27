@@ -1,22 +1,35 @@
-export function getProduct(productId) {
-  let matchingProduct;
-
-  products.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
-
-  return matchingProduct;
-}
-
 export const products = [
   {
     id: "001",
     name: "4007 QUARTER ZIP SWEATSHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_Black_01.jpg?v=1737052391&width=823",
-    color: "Black",
+    colors: [
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_Black_01.jpg?v=1737052391&width=1100",
+      },
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_Navy_01.jpg?v=1737053264&width=823",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_HeatherGrey_01.jpg?v=1737052832&width=1100",
+      },
+      {
+        name: "natural",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_Natural_01.jpg?v=1737053053&width=1100",
+      },
+      {
+        name: "heather ash",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/QuarterZip_HeatherAsh_01.jpg?v=1737052919&width=1100",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 6999,
     rating: "4.5",
     review: 293,
@@ -26,9 +39,34 @@ export const products = [
   {
     id: "002",
     name: "3013 RELAXED FIT FLEECE HOODED SWEATSHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/PullOver_HeatherGrey_01.jpg?v=1732917072&width=823",
-    color: "White",
+    colors: [
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_HeatherGrey_01.jpg?v=1732917072&width=360",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Black_01.jpg?v=1732916393&width=360",
+      },
+      {
+        name: "sand",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sand_01.jpg?v=1732918084&width=1100",
+      },
+      {
+        name: "dusty rose",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/3013RelaxedFitPulloverHoodie_DustyRose_01.jpg?v=1749659228&width=360",
+      },
+      {
+        name: "sage",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_01.jpg?v=1732917944&width=823",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 4599,
     rating: "5",
     review: 153,
@@ -38,9 +76,29 @@ export const products = [
   {
     id: "003",
     name: "1012 RELAXED FIT T-SHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/TShirt_Black_01.jpg?v=1732911152&width=823",
-    color: "Black",
+    colors: [
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_Black_01.jpg?v=1732911152&width=360",
+      },
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_Navy_01.jpg?v=1732911456&width=823",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_HeatherGrey_01.jpg?v=1732911344&width=1100",
+      },
+      {
+        name: "washed indigo",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/Summer-TShirt_WashedIndigo_01.jpg?v=1720470157&width=1100",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 2100,
     rating: "4.1",
     review: 783,
@@ -50,9 +108,34 @@ export const products = [
   {
     id: "004",
     name: "3010 RELAXED FIT PULLOVER HOODED SWEATSHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ForestGreen_01_1.jpg?v=1726671087&width=823",
-    color: "Forest Green",
+    colors: [
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ForestGreen_01_1.jpg?v=1726671087&width=360",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_Black_01.jpg?v=1726670684&width=1100",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_OliveDrab_01.jpg?v=1726671442&width=360",
+      },
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ChocolateBrown_01_2.jpg?v=1726670853&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_HeatherGrey_01.jpg?v=1726671314&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 5400,
     rating: "4",
     review: 793,
@@ -62,9 +145,29 @@ export const products = [
   {
     id: "005",
     name: "1012 RELAXED FIT T-SHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/TShirt_HeatherGrey_01.jpg?v=1732911344&width=823",
-    color: "Heather Grey",
+    colors: [
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_Navy_01.jpg?v=1732911456&width=823",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_Black_01.jpg?v=1732911152&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/TShirt_HeatherGrey_01.jpg?v=1732911344&width=1100",
+      },
+      {
+        name: "washed indigo",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/Summer-TShirt_WashedIndigo_01.jpg?v=1720470157&width=1100",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 2549,
     rating: "3.8",
     review: 541,
@@ -74,9 +177,34 @@ export const products = [
   {
     id: "006",
     name: "1009 HEAVYWEIGHT T-SHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_Red_01.jpg?v=1726516718&width=823",
-    color: "Red",
+    colors: [
+      {
+        name: "red",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_Red_01.jpg?v=1726516718&width=360",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_01_1.jpg?v=1726516633&width=360",
+      },
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_ChocolateBrown_01_1.jpg?v=1726511324&width=1100",
+      },
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_ForestGreen_01.jpg?v=1726511578&width=1100",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_HeatherGrey_01_2.jpg?v=1726511909&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 1949,
     rating: "4.9",
     review: "1.2k",
@@ -86,9 +214,24 @@ export const products = [
   {
     id: "007",
     name: "4004 CLASSIC CREWNECK",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/ClassicCrewneck_Black_01.jpg?v=1726237764&width=360",
-    color: "Navy",
+    colors: [
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicCrewneck_Navy_01.jpg?v=1726240490&width=1100",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicCrewneck_Black_01.jpg?v=1726237764&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicCrewneck_HeatherGrey_01_1.jpg?v=1726238865&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 3149,
     rating: "4.1",
     review: 653,
@@ -98,9 +241,34 @@ export const products = [
   {
     id: "008",
     name: "3010 RELAXED FIT FRENCH TERRY HOODED SWEATSHIRT",
-    image:
-      "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ChocolateBrown_01_2.jpg?v=1726670853&width=360",
-    color: "Chocolate Brown",
+    colors: [
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_Black_01.jpg?v=1726670684&width=1100",
+      },
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ForestGreen_01_1.jpg?v=1726671087&width=360",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_OliveDrab_01.jpg?v=1726671442&width=360",
+      },
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_ChocolateBrown_01_2.jpg?v=1726670853&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/RelaxedFitPullover_HeatherGrey_01.jpg?v=1726671314&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 4200,
     rating: "4",
     review: 893,
@@ -113,33 +281,133 @@ export const productsMore = [
   {
     id: "009",
     name: "7004 CLASSIC SWEATPANT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748790306_683c6c225523b.jpg",
-    color: "Blue",
+    colors: [
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_Black_01_1.jpg?v=1726255426&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_HeatherGrey_01.jpg?v=1726258232&width=1100",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_OliveDrab_01_1.jpg?v=1726259828&width=360",
+      },
+      {
+        name: "dusty rose",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_DustyRose_01.jpg?v=1726255912&width=360",
+      },
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_ForestGreen_01.jpg?v=1726256007&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 9999,
   },
   {
     id: "010",
     name: "7004 CLASSIC SWEATPANT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748790340_683c6c442d009.jpg",
-    color: "Heather Grey",
+    colors: [
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_HeatherGrey_01.jpg?v=1726258232&width=1100",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_Black_01_1.jpg?v=1726255426&width=360",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_OliveDrab_01_1.jpg?v=1726259828&width=360",
+      },
+      {
+        name: "dusty rose",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_DustyRose_01.jpg?v=1726255912&width=360",
+      },
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ClassicSweatpant_ForestGreen_01.jpg?v=1726256007&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 8999,
   },
   {
     id: "011",
     name: "3013 RELAXED FIT FLEECE HOODIE",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748878892_683dc62cc9a42.jpg",
-    color: "Dusty Rose",
+    colors: [
+      {
+        name: "dusty rose",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/3013RelaxedFitPulloverHoodie_DustyRose_01.jpg?v=1749659228&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_HeatherGrey_01.jpg?v=1732917072&width=360",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Black_01.jpg?v=1732916393&width=360",
+      },
+      {
+        name: "sand",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sand_01.jpg?v=1732918084&width=1100",
+      },
+      {
+        name: "sage",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_01.jpg?v=1732917944&width=823",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 7499,
   },
   {
     id: "012",
     name: "1009 CLASSIC HEAVYWEIGHT T-SHIRT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748788940_683c66ccb8b5b.jpg",
-    color: "Olive Drab",
+    colors: [
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_01_1.jpg?v=1726516633&width=360",
+      },
+      {
+        name: "red",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_Red_01.jpg?v=1726516718&width=360",
+      },
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_ChocolateBrown_01_1.jpg?v=1726511324&width=1100",
+      },
+      {
+        name: "sage",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/1009-HW-T-Shirt_Sage_01.jpg?v=1749665707&width=360",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_HeatherGrey_01_2.jpg?v=1726511909&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 3499,
   },
 ];
@@ -147,34 +415,109 @@ export const productsMore = [
 export const productsMoreLast = [
   {
     id: "013",
-    name: "7004 CLASSIC SWEATPANT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748790306_683c6c225523b.jpg",
-    color: "Blue",
-    priceRupees: 9999,
+    name: "5002 ZIP HOODED SWEATSHIRT",
+    colors: [
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ZipHoody_HeatherGrey_01.jpg?v=1726606937&width=360",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ZipHoody_Black_01.jpg?v=1726606829&width=360",
+      },
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/ZipHoody_Navy_01.jpg?v=1726606998&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    priceRupees: 5999,
   },
   {
     id: "014",
-    name: "7004 CLASSIC SWEATPANT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748790340_683c6c442d009.jpg",
-    color: "Heather Grey",
-    priceRupees: 8999,
+    name: "1011 HEAVYWEIGHT L/S T-SHIRT",
+    colors: [
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt-LS_ChocolateBrown_01.jpg?v=1726517187&width=360",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt-LS_OliveDrab_01_1.jpg?v=1726518488&width=360",
+      },
+      {
+        name: "forest green",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt-LS_ForestGreen_01.jpg?v=1726518004&width=360",
+      },
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt-LS_Black_01.jpg?v=1726517058&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    priceRupees: 4999,
   },
   {
     id: "015",
-    name: "3013 RELAXED FIT FLEECE HOODIE",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748878892_683dc62cc9a42.jpg",
-    color: "Dusty Rose",
+    name: "7007 FLEECE SWEATSHORT",
+    colors: [
+      {
+        name: "black",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/Shorts_Black_01.jpg?v=1749741855&width=360",
+      },
+      {
+        name: "navy",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/Shorts_Navy_01.jpg?v=1749744490&width=360",
+      },
+      {
+        name: "heather ash",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/Shorts_HeatherAsh_01.jpg?v=1749742465&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 7499,
   },
   {
     id: "016",
-    name: "1009 CLASSIC HEAVYWEIGHT T-SHIRT",
-    image:
-      "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748788940_683c66ccb8b5b.jpg",
-    color: "Olive Drab",
+    name: "1009 HEAVYWEIGHT T-SHIRT",
+    colors: [
+      {
+        name: "sage",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/1009-HW-T-Shirt_Sage_01.jpg?v=1749665707&width=360",
+      },
+      {
+        name: "olive drab",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_01_1.jpg?v=1726516633&width=360",
+      },
+      {
+        name: "red",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_Red_01.jpg?v=1726516718&width=360",
+      },
+      {
+        name: "chocolate brown",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_ChocolateBrown_01_1.jpg?v=1726511324&width=1100",
+      },
+      {
+        name: "heather gray",
+        image:
+          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_HeatherGrey_01_2.jpg?v=1726511909&width=360",
+      },
+    ],
+    sizes: ["S", "M", "L", "XL"],
     priceRupees: 3499,
   },
 ];
