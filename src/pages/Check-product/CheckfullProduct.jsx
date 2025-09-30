@@ -22,8 +22,21 @@ export function CheckfullProduct({
   const [showColourMessage, setShowColourMessage] = useState(false);
   const [showQuantityMessage, setShowQuantityMessage] = useState(false);
   const [changeProductColor, setChangeProductColor] = useState(0);
+  const [slider, setSlider] = useState(0);
   const { productId } = useParams();
   const navigate = useNavigate();
+
+  const rightSlide = (image) => {
+    setSlider((prev) => (prev + 1) % image.length);
+  };
+
+  const leftSlide = (image) => {
+    setSlider((prev) => (prev - 1 + image.length) % image.length);
+  };
+
+  const slideImageBack = () => {
+    setSlider(0);
+  };
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -106,18 +119,28 @@ export function CheckfullProduct({
           <img
             src={
               matchingProduct.colors
-                ? matchingProduct.colors[changeProductColor].image
+                ? matchingProduct.colors[changeProductColor].image[slider]
                 : "no image"
             }
             alt=""
           />
-          {/* <div className="right-slider">
-            <img src={"/"} />
+          <div
+            className="right-slider"
+            onClick={() => {
+              rightSlide(matchingProduct.colors[changeProductColor].image);
+            }}
+          >
+            <img src={rightChevron} />
           </div>
 
-          <div className="left-slider">
-            <img src={"/"} />
-          </div> */}
+          <div
+            className="left-slider"
+            onClick={() => {
+              leftSlide(matchingProduct.colors[changeProductColor].image);
+            }}
+          >
+            <img src={leftChevron} />
+          </div>
         </div>
         <div className="product-details">
           <div className="product-name">

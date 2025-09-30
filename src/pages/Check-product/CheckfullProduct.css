@@ -32,17 +32,16 @@
 .right-slider {
   border-radius: 50%;
   padding: 0.5rem;
-  height: 20px;
-  width: 20px;
-  border: 1px solid;
+  height: 40px;
+  width: 40px;
+  border: 1px solid gray;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 50%;
-  right: -4%;
+  right: 1%;
   background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(2px);
   cursor: pointer;
 }
 
@@ -55,17 +54,16 @@
 .left-slider {
   border-radius: 50%;
   padding: 0.5rem;
-  height: 20px;
-  width: 20px;
-  border: 1px solid;
+  height: 40px;
+  width: 40px;
+  border: 1px solid gray;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 50%;
-  left: -4%;
+  left: 1%;
   background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(2px);
   cursor: pointer;
 }
 
