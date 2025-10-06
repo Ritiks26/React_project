@@ -4,7 +4,14 @@ import { Header } from "../../Components/Header";
 import "./CheckoutPage.css";
 import axios from "axios";
 
-export function CheckoutPage({ cart, totalQuantity, loadCart }) {
+export function CheckoutPage({
+  cart,
+  totalQuantity,
+  loadCart,
+  products,
+  productsMore,
+  productsMoreLast,
+}) {
   let productCost = 0;
   let discount = 0;
   let tax = 0;
@@ -36,7 +43,12 @@ export function CheckoutPage({ cart, totalQuantity, loadCart }) {
     <>
       <title>Checkout</title>
 
-      <Header totalQuantity={totalQuantity} />
+      <Header
+        totalQuantity={totalQuantity}
+        products={products}
+        productsMore={productsMore}
+        productsMoreLast={productsMoreLast}
+      />
 
       <div className="checkout-container">
         <div className="cart-count">

@@ -67,6 +67,9 @@ function App() {
               setCart={setCart}
               totalQuantity={totalQuantity}
               loadCart={loadCart}
+              products={products}
+              productsMore={productsMore}
+              productsMoreLast={productsMoreLast}
             />
           }
         />

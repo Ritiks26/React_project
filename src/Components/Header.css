@@ -1,16 +1,19 @@
 header {
-  height: 70px;
-  width: 100%;
-  /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+  min-height: 70px;
+  border-bottom: 1px solid lightgrey;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
-  background-color: var(--clr-white-full);
-  background-color: #00000009;
-  backdrop-filter: blur(2rem);
   z-index: 10;
+  background-color: var(--clr-white-full);
+}
+
+.header {
+  /* height: 70px; */
+  height: 100%;
+  width: 100%;
+  /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
 
   display: flex;
   align-items: center;
@@ -18,7 +21,6 @@ header {
   padding: 0rem 1rem;
   margin: 0;
   box-sizing: border-box;
-  /* border-bottom: 1px solid lightgrey; */
 
   @media (width > 500px) {
     header {
@@ -388,4 +390,94 @@ nav li:hover .dropdown li a {
 
   top: 5%;
   right: 8%;
+}
+
+.filteredProducts-container {
+  position: absolute;
+  background-color: whitesmoke;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  min-height: 20vh;
+  left: 60%;
+  right: 0%;
+  top: 100%;
+  padding: 0.25rem 0.75rem;
+}
+
+.filteredProduct-card {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  margin: 0.5rem 0rem;
+  border: 1px solid lightgray;
+}
+
+.filteredProduct-details {
+  font-family: general sans;
+  cursor: pointer;
+}
+
+.filteredProduct-details h3 {
+  font-weight: 500;
+}
+
+.filteredProducts-container .filteredProducts-image {
+  height: 85px;
+  width: 80px;
+  background-color: #333;
+}
+
+.filteredProducts-container .filteredProduct-image img {
+  height: 85px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.Link {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.nothing-found-message {
+  min-height: 8vh;
+  font-family: general sans;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.android-search-bar {
+  position: relative;
+  height: 6vh;
+  box-sizing: border-box;
+  padding: 0rem 0.5rem;
+
+  @media (width > 500px) {
+    display: none;
+  }
+}
+
+.android-search-bar input {
+  border: 1px solid lightgray;
+  height: 4vh;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-family: general sans;
+  padding: 0rem 0.25rem;
+  padding-left: 1.75rem;
+}
+
+.android-search-bar input::placeholder {
+  font-size: 0.72rem;
+  font-family: general sans;
+}
+
+.android-search-icon {
+  position: absolute;
+  top: 18%;
+  left: 4%;
+  height: 16px;
+  width: 16px;
 }

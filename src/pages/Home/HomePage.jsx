@@ -17,7 +17,12 @@ export function HomePage({
   return (
     <>
       <title>RSNB</title>
-      <Header totalQuantity={totalQuantity} />
+      <Header
+        totalQuantity={totalQuantity}
+        products={products}
+        productsMore={productsMore}
+        productsMoreLast={productsMoreLast}
+      />
       <MarqueePictures />
       <ReusableProductsContainer products={products} />
       <GlowingSuggestions />

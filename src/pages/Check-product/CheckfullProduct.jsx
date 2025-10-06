@@ -113,7 +113,12 @@ export function CheckfullProduct({
   return (
     <>
       <title>Product</title>
-      <Header totalQuantity={totalQuantity} />
+      <Header
+        totalQuantity={totalQuantity}
+        products={products}
+        productsMore={productsMore}
+        productsMoreLast={productsMoreLast}
+      />
       <div className="full-products-container">
         <div className="product-image">
           <img
