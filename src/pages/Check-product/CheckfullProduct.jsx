@@ -83,7 +83,7 @@ export function CheckfullProduct({
       return;
     }
 
-    await axios.post("http://localhost:9000/cart", {
+    await axios.post("https://react-products-backend-obvl.onrender.com/cart", {
       productId: matchingProduct.id,
       quantity,
       color: selectedColour,
