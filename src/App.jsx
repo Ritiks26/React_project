@@ -13,23 +13,52 @@ function App() {
   const [productsMore, setProductsMore] = useState([]);
   const [productsMoreLast, setProductsMoreLast] = useState([]);
   const [cart, setCart] = useState([]);
+  // useEffect(() => {
+  //   axios.get("http://localhost:9000/products").then((response) => {
+  //     setProducts(response.data);
+  //   });
+
+  //   axios.get("http://localhost:9000/products-More").then((response) => {
+  //     setProductsMore(response.data);
+  //   });
+
+  //   axios.get("http://localhost:9000/products-more-last").then((response) => {
+  //     setProductsMoreLast(response.data);
+  //   });
+  // }, []);
+
+  // const loadCart = async () => {
+  //   const response = await axios.get(
+  //     "http://localhost:9000/cart?expand=products"
+  //   );
+  //   setCart(response.data);
+  // };
+
   useEffect(() => {
-    axios.get("http://localhost:9000/products").then((response) => {
-      setProducts(response.data);
-    });
+    axios
+      .get("https://react-products-backend-obvl.onrender.com/products")
+      .then((response) => {
+        setProducts(response.data);
+      });
 
-    axios.get("http://localhost:9000/products-More").then((response) => {
-      setProductsMore(response.data);
-    });
+    axios
+      .get("https://react-products-backend-obvl.onrender.com/products-More")
+      .then((response) => {
+        setProductsMore(response.data);
+      });
 
-    axios.get("http://localhost:9000/products-more-last").then((response) => {
-      setProductsMoreLast(response.data);
-    });
+    axios
+      .get(
+        "https://react-products-backend-obvl.onrender.com/products-more-last"
+      )
+      .then((response) => {
+        setProductsMoreLast(response.data);
+      });
   }, []);
 
   const loadCart = async () => {
     const response = await axios.get(
-      "http://localhost:9000/cart?expand=products"
+      "https://react-products-backend-obvl.onrender.com/cart?expand=products"
     );
     setCart(response.data);
   };

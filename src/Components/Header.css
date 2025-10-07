@@ -1,6 +1,7 @@
 header {
   min-height: 70px;
-  border-bottom: 1px solid lightgrey;
+  /* border-bottom: 1px solid lightgrey; */
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +14,6 @@ header {
   /* height: 70px; */
   height: 100%;
   width: 100%;
-  /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
 
   display: flex;
   align-items: center;
@@ -397,11 +397,16 @@ nav li:hover .dropdown li a {
   background-color: whitesmoke;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-  min-height: 20vh;
-  left: 60%;
+  min-height: 12vh;
+  left: 0%;
   right: 0%;
   top: 100%;
   padding: 0.25rem 0.75rem;
+
+  @media (width > 500px) {
+    left: 60%;
+    min-height: 20vh;
+  }
 }
 
 .filteredProduct-card {
@@ -443,6 +448,7 @@ nav li:hover .dropdown li a {
   min-height: 8vh;
   font-family: general sans;
   font-weight: 500;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,6 +6,7 @@ import { Header } from "../../Components/Header";
 import { MarqueePictures } from "./MarqueePictures";
 import { ReusableProductsContainer } from "../../Components/ReusableProductsContainer";
 import { GlowingSuggestionsRight } from "../../Components/GlowingSuggestionsRight";
+import { Hero } from "./Hero";
 import { BentoGrid } from "./BentoGrid";
 
 export function HomePage({
@@ -29,6 +30,7 @@ export function HomePage({
       <GlowingSuggestionsRight />
       <ReusableProductsContainer products={productsMore} />
       <ReusableProductsContainer products={productsMoreLast} />
+      <Hero />
 
       {/* <BentoGrid /> */}
     </>

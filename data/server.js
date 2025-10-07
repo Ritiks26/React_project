@@ -105,7 +105,7 @@ app.put("/cart/:productId", (req, res) => {
 // --- DELETE remove single item from cart ---
 app.delete("/cart/:productId", (req, res) => {
   const { productId } = req.params;
-  const { color, size } = req.query; // color, size ko query params me bhej sakte ho
+  const { color, size } = req.query;
 
   const index = cart.findIndex(
     (item) =>
