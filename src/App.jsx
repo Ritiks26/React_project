@@ -35,7 +35,7 @@ function App() {
   // };
 
   useEffect(() => {
-<<<<<<< HEAD
+    // axios.get("https://react-products-backend-obvl.onrender.com/products").then((response) => {
     axios
       .get("https://react-products-backend-obvl.onrender.com/products")
       .then((response) => {
@@ -55,20 +55,6 @@ function App() {
       .then((response) => {
         setProductsMoreLast(response.data);
       });
-=======
-    // axios.get("https://react-products-backend-obvl.onrender.com/products").then((response) => {
-    axios.get("https://react-products-backend-obvl.onrender.com/products").then((response) => {
-      setProducts(response.data);
-    });
-
-    axios.get("https://react-products-backend-obvl.onrender.com/products-More").then((response) => {
-      setProductsMore(response.data);
-    });
-
-    axios.get("https://react-products-backend-obvl.onrender.com/products-more-last").then((response) => {
-      setProductsMoreLast(response.data);
-    });
->>>>>>> cc4f717fd5cf892b97104fa093b15e63dd62ad73
   }, []);
 
   const loadCart = async () => {
