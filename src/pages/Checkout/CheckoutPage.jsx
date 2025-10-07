@@ -27,10 +27,10 @@ export function CheckoutPage({
   const updateQuantity = async (id, quantity, colour, size) => {
     if (quantity <= 0) {
       await axios.delete(
-        `http://localhost:9000/cart/${id}?colour=${colour}&size=${size}`
+        `https://react-products-backend-obvl.onrender.com/cart/${id}?colour=${colour}&size=${size}`
       );
     } else {
-      await axios.put(`http://localhost:9000/cart/${id}`, {
+      await axios.put(`https://react-products-backend-obvl.onrender.com/cart/${id}`, {
         quantity: quantity,
         color: colour,
         size: size,
