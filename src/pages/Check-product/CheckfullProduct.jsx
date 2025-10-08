@@ -129,69 +129,76 @@ export function CheckfullProduct({
             }
             alt=""
           />
-          <div
-            className="right-slider"
-            onClick={() => {
-              rightSlide(matchingProduct.colors[changeProductColor].image);
-            }}
-          >
-            <img src={rightChevron} />
-          </div>
+          <div className="slider">
+            <div
+              className="left-slider"
+              onClick={() => {
+                leftSlide(matchingProduct.colors[changeProductColor].image);
+              }}
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="icon-left"
+                viewBox="0 0 10 6"
+                height="20px"
+                width="20px"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
 
-          <div
-            className="left-slider"
-            onClick={() => {
-              leftSlide(matchingProduct.colors[changeProductColor].image);
-            }}
-          >
-            <img src={leftChevron} />
+            <div className="products-out-of-count">
+              {slider + 1}/
+              {matchingProduct.colors[changeProductColor].image.length}
+            </div>
+
+            <div
+              className="right-slider"
+              onClick={() => {
+                rightSlide(matchingProduct.colors[changeProductColor].image);
+              }}
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="icon-right"
+                viewBox="0 0 10 6"
+                height="20px"
+                width="20px"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
           </div>
         </div>
         <div className="product-details">
           <div className="product-name">
             <h1>{matchingProduct.name}</h1>
           </div>
-          <div className="product-description">
-            <p>{matchingProduct.description}</p>
+          <div className="selected-product-color">
+            {selectedColour?.toUpperCase()}
           </div>
 
-          <div className="product-price-rating">
+          <div className="product-price">
             <div className="price">
               <strong>{formatMoney(matchingProduct.priceRupees)}</strong>
             </div>
-
-            <div className="rating-stars">
-              <img
-                style={{ height: "18px", marginRight: "0.5rem" }}
-                src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
-                alt=""
-              />{" "}
-              {matchingProduct.rating} stars ({matchingProduct.review} reviews)
-            </div>
           </div>
 
-          <hr />
-
           <div className="selection-container">
-            <div className="size-selection-container">
-              SIZE:
-              <div className="select-size">
-                {matchingProduct.sizes.map((size) => (
-                  <div
-                    key={size}
-                    className={`size-selection ${
-                      selectedSize === size ? "active" : ""
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </div>
-                ))}
-              </div>
-            </div>
-
             <div className="colour-selection-container">
-              COLOUR:
+              COLOUR <span>{selectedColour?.toUpperCase()}</span>
               <div className="select-colour">
                 {matchingProduct.colors.map((color, index) => (
                   <div
@@ -204,6 +211,23 @@ export function CheckfullProduct({
                       setChangeProductColor(index);
                     }}
                   ></div>
+                ))}
+              </div>
+            </div>
+
+            <div className="size-selection-container">
+              SIZE
+              <div className="select-size">
+                {matchingProduct.sizes.map((size) => (
+                  <div
+                    key={size}
+                    className={`size-selection ${
+                      selectedSize === size ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedSize(size)}
+                  >
+                    {size}
+                  </div>
                 ))}
               </div>
             </div>
