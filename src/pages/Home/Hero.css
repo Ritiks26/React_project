@@ -2,30 +2,105 @@
   min-height: 50vh;
   max-width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 0.25rem;
   margin: 0.75rem 0rem;
-  padding: 0rem 0.5rem;
+  padding: 0.5rem;
   overflow: hidden;
-  /* background-color: aqua; */
+  background-color: #1b1b1b;
 
   @media (width > 500px) {
-    flex-direction: row;
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    margin: 0.75rem 0rem;
+    padding: 0.5rem;
   }
 }
 
 .hero-pic {
-  min-height: 50%;
-  max-width: 50%;
-  /* border: 1px solid lightgray; */
-  border-radius: 6px;
-  /* background-color: rgb(11, 126, 228); */
+  position: relative;
+  height: 45vh;
+  width: 55vw;
+  overflow: hidden;
+  background-color: aliceblue;
+
+  @media (width > 500px) {
+    position: relative;
+    height: 80vh;
+    width: 25vw;
+    overflow: hidden;
+  }
+}
+
+.hero-text {
+  position: relative;
+  height: 50vh;
+  width: 25vw;
 }
 
 .hero-pic img {
+  display: block;
   height: 100%;
   width: 100%;
   border-radius: inherit;
   object-fit: cover;
+  transition: all 1.5s ease-in-out;
+  opacity: 1;
+}
+
+.hero-pic:hover .ad-image {
+  transform: scale(1.2);
+}
+
+.hero-pic:hover .ad-text {
+  opacity: 1;
+}
+
+.hero-pic p {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  color: rgb(209, 209, 209);
+  font-weight: 500;
+
+  font-family: general sans;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.text {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-family: clash display;
+  font-weight: 600;
+  display: inline-block;
+  position: absolute;
+  bottom: 40%;
+  left: -120%;
+  transform: scaleY(1.75);
+  transform-origin: bottom;
+  position: absolute;
+  text-wrap: nowrap;
+
+  @media (width > 500px) {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    font-family: clash display;
+    font-weight: 500;
+    display: inline-block;
+    position: absolute;
+    bottom: 40%;
+    left: -100%;
+    transform: scaleY(1.75);
+    transform-origin: bottom;
+    position: absolute;
+    text-wrap: nowrap;
+  }
+}
+
+.width-increasing {
+  height: 0.15vh;
+  width: 25vw;
+  background-color: aqua;
 }
