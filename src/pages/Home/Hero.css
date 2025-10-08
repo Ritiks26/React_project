@@ -2,12 +2,13 @@
   min-height: 50vh;
   max-width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.25rem;
   margin: 0.75rem 0rem;
   padding: 0rem 0.5rem;
   overflow: hidden;
-  background-color: aqua;
+  /* background-color: aqua; */
 
   @media (width > 500px) {
     flex-direction: row;
@@ -16,15 +17,15 @@
 
 .hero-pic {
   min-height: 50%;
-  width: 50%;
+  max-width: 50%;
   /* border: 1px solid lightgray; */
   border-radius: 6px;
-  background-color: rgb(11, 126, 228);
+  /* background-color: rgb(11, 126, 228); */
 }
 
 .hero-pic img {
-  min-height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   border-radius: inherit;
   object-fit: cover;
 }

@@ -1,16 +1,3 @@
 {
-  "cart": [
-    {
-      "id": "002",
-      "quantity": 2,
-      "color": "sage",
-      "size": "XL",
-      "image": [
-        "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_01.jpg?v=1732917944&width=823",
-        "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_03.jpg?v=1732917944&width=1100",
-        "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_02.jpg?v=1732917944&width=1100",
-        "https://www.houseofblanks.com/cdn/shop/files/PullOver_Sage_04.jpg?v=1732917944&width=1100"
-      ]
-    }
-  ]
+  "cart": []
 }
