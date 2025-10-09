@@ -120,7 +120,7 @@ export function CheckfullProduct({
         productsMoreLast={productsMoreLast}
       />
       <div className="full-products-container">
-        <div className="product-image">
+        <div className="matchingProduct-image">
           <img
             src={
               matchingProduct.colors
@@ -182,15 +182,15 @@ export function CheckfullProduct({
             </div>
           </div>
         </div>
-        <div className="product-details">
-          <div className="product-name">
+        <div className="matchingProduct-details">
+          <div className="matchingProduct-name">
             <h1>{matchingProduct.name}</h1>
           </div>
           <div className="selected-product-color">
             {selectedColour?.toUpperCase()}
           </div>
 
-          <div className="product-price">
+          <div className="matchingProduct-price">
             <div className="price">
               <strong>{formatMoney(matchingProduct.priceRupees)}</strong>
             </div>

@@ -14,13 +14,13 @@
   overflow: hidden;
 }
 
-.product-image {
+.matchingProduct-image {
   position: relative;
   height: 50vh;
   width: 100%;
 }
 
-.product-image img {
+.matchingProduct-image img {
   display: block;
   height: 100%;
   width: 100%;
@@ -51,7 +51,7 @@
   transform: rotate(-90deg);
 }
 
-.product-details {
+.matchingProduct-details {
   padding: 0rem 1rem;
   position: relative;
   @media (width > 500px) {
@@ -59,9 +59,10 @@
   }
 }
 
-.product-name h1 {
+.matchingProduct-name h1 {
   font-family: general sans;
-  font-size: 1.75rem;
+  font-size: 1.35rem;
+  transform: scaleY(1.1);
   font-weight: 500;
   line-height: 2.25rem;
   margin: 0;
@@ -69,24 +70,29 @@
   @media (width > 500px) {
     font-size: 2.75rem;
     font-weight: 600;
+    line-height: 3rem;
   }
 }
 
 .selected-product-color {
   font-family: general sans;
+  font-size: 0.8rem;
+  color: gray;
   font-weight: 400;
   margin: 0.25rem 0rem;
+  letter-spacing: 0.12rem;
 }
 
-.product-price {
+.matchingProduct-price {
   display: flex;
   justify-content: space-between;
   font-family: clash display;
-  margin-top: 1rem;
+  margin: 1rem 0rem;
 }
 
 .price {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  transform: scaleY(1.1);
   font-weight: 500;
   letter-spacing: 0.1rem;
 
@@ -116,8 +122,9 @@
 .colour-selection-container {
   font-family: general sans;
   margin: 0rem;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
 
   @media (width > 500px) {
     font-size: 1.05rem;
@@ -334,7 +341,7 @@
 }
 
 .heather-gray {
-  background-color: #b6b6b4;
+  background-color: #b6b4b2;
 }
 
 .colour-selection.heather-gray.active {
@@ -349,7 +356,7 @@
     width: 42px;
     border-radius: 50%;
 
-    border: 2px solid #b6b6b4;
+    border: 2px solid #b6b4b2;
 
     @media (width > 500px) {
       height: 50px;
@@ -394,7 +401,7 @@
 }
 
 .heather-ash {
-  background-color: #b0b0aa;
+  background-color: #e6e7f2;
 }
 
 .colour-selection.heather-ash.active {
@@ -409,7 +416,7 @@
     width: 42px;
     border-radius: 50%;
 
-    border: 2px solid #b0b0aa;
+    border: 2px solid #e6e7f2;
 
     @media (width > 500px) {
       height: 50px;
@@ -424,7 +431,7 @@
 }
 
 .sand {
-  background-color: #c2b280;
+  background-color: #cbbcad;
 }
 
 .colour-selection.sand.active {
@@ -439,7 +446,7 @@
     width: 42px;
     border-radius: 50%;
 
-    border: 2px solid #c2b280;
+    border: 2px solid #cbbcad;
 
     @media (width > 500px) {
       height: 50px;
@@ -454,7 +461,7 @@
 }
 
 .sage {
-  background-color: #9caf88;
+  background-color: #b8c3b6;
 }
 
 .colour-selection.sage.active {
@@ -469,7 +476,7 @@
     width: 42px;
     border-radius: 50%;
 
-    border: 2px solid #9caf88;
+    border: 2px solid #b8c3b6;
 
     @media (width > 500px) {
       height: 50px;

@@ -17,13 +17,14 @@
 
 .product-container {
   background-color: var(--clr-lightgrey-500);
-  border-radius: 4px;
 
   transition: all 0.15s ease-in-out;
   overflow: hidden;
+  padding-bottom: 0.25rem;
 }
 
 .product-content {
+  min-height: 100%;
   font-family: clash display;
   padding: 0rem 0.35rem;
   text-align: center;
@@ -49,7 +50,6 @@
 .product-content .product-price {
   font-size: 0.95rem;
   font-weight: 500;
-  /* margin: 0.25rem 0rem; */
 
   @media (width >= 500px) {
     font-size: 1rem;
@@ -60,7 +60,6 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  border-radius: 4px;
 }
 
 .products-image {
