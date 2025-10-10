@@ -27,6 +27,7 @@ export function ReusableProductsContainer({ products }) {
               <p className="product-color">
                 <strong>
                   {product.colors ? product.colors[0].name : product.name}
+                  {console.log(product.colors)}
                 </strong>
               </p>
               <p className="product-price">

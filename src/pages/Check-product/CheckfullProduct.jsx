@@ -1,9 +1,8 @@
 import { Header } from "../../Components/Header";
+import { SkeletonLoading } from "./SkeletonLoading";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-import rightChevron from "../../assets/rightslider.svg";
-import leftChevron from "../../assets/leftslider.svg";
 import { formatMoney } from "../utils/money";
 import "./CheckfullProduct.css";
 
@@ -27,15 +26,21 @@ export function CheckfullProduct({
   const navigate = useNavigate();
 
   const rightSlide = (image) => {
-    setSlider((prev) => (prev + 1) % image.length);
+    setSlider((prev) => {
+      if (prev < image.length - 1) {
+        return prev + 1; // sirf aage badhega agar last image se pehle hai
+      }
+      return prev; // agar last image hai to wahi ruk jaayega
+    });
   };
 
   const leftSlide = (image) => {
-    setSlider((prev) => (prev - 1 + image.length) % image.length);
-  };
-
-  const slideImageBack = () => {
-    setSlider(0);
+    setSlider((prev) => {
+      if (prev > 0) {
+        return prev - 1; // sirf peeche aayega agar first se aage hai
+      }
+      return prev; // first image par koi aur action nahi
+    });
   };
 
   const increaseQuantity = () => {
@@ -107,7 +112,7 @@ export function CheckfullProduct({
   }, [matchingProduct]);
 
   if (!matchingProduct) {
-    return <div style={{ fontFamily: "general sans" }}>Loading Product...</div>;
+    return <SkeletonLoading />;
   }
 
   return (
@@ -121,14 +126,16 @@ export function CheckfullProduct({
       />
       <div className="full-products-container">
         <div className="matchingProduct-image">
-          <img
-            src={
-              matchingProduct.colors
-                ? matchingProduct.colors[changeProductColor].image[slider]
-                : "no image"
-            }
-            alt=""
-          />
+          <div
+            className="images-wrapper"
+            style={{ transform: `translateX(-${slider * 100}%)` }}
+          >
+            {matchingProduct.colors[changeProductColor].image.map(
+              (url, index) => (
+                <img key={index} src={url} alt={`product ${index}`} />
+              )
+            )}
+          </div>
           <div className="slider">
             <div
               className="left-slider"
@@ -183,68 +190,69 @@ export function CheckfullProduct({
           </div>
         </div>
         <div className="matchingProduct-details">
-          <div className="matchingProduct-name">
-            <h1>{matchingProduct.name}</h1>
-          </div>
-          <div className="selected-product-color">
-            {selectedColour?.toUpperCase()}
-          </div>
-
-          <div className="matchingProduct-price">
-            <div className="price">
-              <strong>{formatMoney(matchingProduct.priceRupees)}</strong>
+          <div className="first-detail-column">
+            <div className="matchingProduct-name">
+              <h1>{matchingProduct.name}</h1>
             </div>
-          </div>
-
-          <div className="selection-container">
-            <div className="colour-selection-container">
-              COLOUR <span>{selectedColour?.toUpperCase()}</span>
-              <div className="select-colour">
-                {matchingProduct.colors.map((color, index) => (
-                  <div
-                    key={color.name}
-                    className={`colour-selection ${color.name} ${
-                      selectedColour === color.name ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setSelectedColour(color.name);
-                      setChangeProductColor(index);
-                    }}
-                  ></div>
-                ))}
-              </div>
+            <div className="selected-product-color">
+              {selectedColour?.toUpperCase()}
             </div>
-
-            <div className="size-selection-container">
-              SIZE
-              <div className="select-size">
-                {matchingProduct.sizes.map((size) => (
-                  <div
-                    key={size}
-                    className={`size-selection ${
-                      selectedSize === size ? "active" : ""
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </div>
-                ))}
+            <div className="matchingProduct-price">
+              <div className="price">
+                <strong>{formatMoney(matchingProduct.priceRupees)}</strong>
               </div>
             </div>
           </div>
 
-          <div className="add-to-cart-quantity">
-            <div className="quantity-selection">
-              <div className="decrease-quantity" onClick={decreaseQuantity}>
-                -
+          <div className="second-detail-column">
+            <div className="selection-container">
+              <div className="colour-selection-container">
+                COLOUR <span>{selectedColour?.toUpperCase()}</span>
+                <div className="select-colour">
+                  {matchingProduct.colors.map((color, index) => (
+                    <div
+                      key={color.name}
+                      className={`colour-selection ${color.name} ${
+                        selectedColour === color.name ? "active" : ""
+                      }`}
+                      onClick={() => {
+                        setSelectedColour(color.name);
+                        setChangeProductColor(index);
+                      }}
+                    ></div>
+                  ))}
+                </div>
               </div>
-              <div className="quantity-count">{quantity}</div>
-              <div className="increase-quantity" onClick={increaseQuantity}>
-                +
+              <div className="size-selection-container">
+                SIZE
+                <div className="select-size">
+                  {matchingProduct.sizes.map((size) => (
+                    <div
+                      key={size}
+                      className={`size-selection ${
+                        selectedSize === size ? "active" : ""
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="cart-button" onClick={addToCart}>
-              <button>ADD TO CART</button>
+            <div className="add-to-cart-quantity">
+              <div className="quantity-selection">
+                <div className="decrease-quantity" onClick={decreaseQuantity}>
+                  -
+                </div>
+                <div className="quantity-count">{quantity}</div>
+                <div className="increase-quantity" onClick={increaseQuantity}>
+                  +
+                </div>
+              </div>
+              <div className="cart-button" onClick={addToCart}>
+                <button>ADD TO CART</button>
+              </div>
             </div>
           </div>
         </div>
