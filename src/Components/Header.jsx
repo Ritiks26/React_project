@@ -273,7 +273,12 @@ export function Header({
                       </div>
                       <div className="filteredProduct-details">
                         <h3>{product.name}</h3>
-                        <p>₹{product.priceRupees}</p>
+                        <p className="filteredProduct-color">
+                          {product.colors[0].name.toUpperCase()}
+                        </p>
+                        <p className="filteredProduct-price">
+                          ₹{product.priceRupees}
+                        </p>
                       </div>
                     </div>
                   </Link>

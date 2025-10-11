@@ -397,10 +397,15 @@ nav li:hover .dropdown li a {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   min-height: 12vh;
+  max-height: 100vh;
   left: 0%;
   right: 0%;
   top: 100%;
   padding: 0.25rem 0.75rem;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
 
   @media (width > 500px) {
     left: 60%;
@@ -416,25 +421,42 @@ nav li:hover .dropdown li a {
   border: 1px solid lightgray;
 }
 
+.filteredProducts-container .filteredProduct-image {
+  height: 35%;
+  width: 35%;
+  @media (width > 500px) {
+    height: 25%;
+    width: 25%;
+  }
+}
+
+.filteredProducts-container .filteredProduct-image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
 .filteredProduct-details {
   font-family: general sans;
   cursor: pointer;
+  width: 100%;
+  padding: 0.25rem 0rem;
 }
 
 .filteredProduct-details h3 {
   font-weight: 500;
+  font-size: clamp(0.8rem, 0.7091rem + 0.4545vw, 1rem);
 }
 
-.filteredProducts-container .filteredProducts-image {
-  height: 85px;
-  width: 80px;
-  background-color: #333;
+.filteredProduct-color {
+  font-size: clamp(0.8rem, 0.7091rem + 0.4545vw, 1rem);
+  margin: 0.25rem 0rem;
 }
 
-.filteredProducts-container .filteredProduct-image img {
-  height: 85px;
-  width: 80px;
-  cursor: pointer;
+.filteredProduct-price {
+  font-family: clash display;
+  font-size: clamp(0.8rem, 0.7091rem + 0.4545vw, 1rem);
 }
 
 .Link {
@@ -446,8 +468,8 @@ nav li:hover .dropdown li a {
 .nothing-found-message {
   min-height: 8vh;
   font-family: general sans;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 0.7818rem + 0.3409vw, 1rem);
   display: flex;
   align-items: center;
   justify-content: center;

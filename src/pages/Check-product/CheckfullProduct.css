@@ -11,6 +11,7 @@
   padding: 1rem 0rem;
   margin-top: 3rem;
   overflow: hidden;
+  padding-bottom: 4rem;
 
   @media (width > 500px) {
     grid-template-columns: 1fr;
