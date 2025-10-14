@@ -85,7 +85,7 @@ export function CheckoutPage({
                 >
                   <div className="cart-summary">
                     <div className="cart-product-image">
-                      <img src={cartItems.product.image} />
+                      <img src={cartItems.product.image[0]} />
                     </div>
                     <div className="cart-item-detail">
                       <p className="cart-product-name">

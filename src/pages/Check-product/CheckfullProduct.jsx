@@ -113,7 +113,7 @@ export function CheckfullProduct({
 
   useEffect(() => {
     if (matchingProduct && matchingProduct.colors?.length > 0) {
-      setSelectedColour(matchingProduct.colors[0].nameForRendering);
+      setSelectedColour(matchingProduct.colors[0].name);
       setChangeProductColor(0);
     }
   }, [matchingProduct]);
@@ -223,7 +223,7 @@ export function CheckfullProduct({
                         selectedColour === color.name ? "active" : ""
                       }`}
                       onClick={() => {
-                        setSelectedColour(color.nameForRendering);
+                        setSelectedColour(color.name);
                         setChangeProductColor(index);
                       }}
                     ></div>

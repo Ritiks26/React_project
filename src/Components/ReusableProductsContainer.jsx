@@ -29,7 +29,7 @@ export function ReusableProductsContainer({ products }) {
                 <p className="product-color">
                   <strong>
                     {product.colors
-                      ? product.colors[0].nameForRendering.toUpperCase()
+                      ? product.colors[0].name.toUpperCase()
                       : product.name}
                   </strong>
                 </p>
