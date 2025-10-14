@@ -615,7 +615,8 @@
             "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_02.jpg?v=1726516633&width=1100"
           ]
         },
-        {"nameForRendering": "red",
+        {
+          "nameForRendering": "red",
           "name": "red",
           "image": [
             "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_Red_01.jpg?v=1726516718&width=1100",
@@ -794,10 +795,10 @@
         {
           "nameForRendering": "olive drab",
           "name": "olive-drab",
-        "image": [
-          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_01_1.jpg?v=1726516633&width=1100",
-          "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_02.jpg?v=1726516633&width=1100"
-        ]
+          "image": [
+            "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_01_1.jpg?v=1726516633&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/HeavyweightTshirt_OliveDrab_02.jpg?v=1726516633&width=1100"
+          ]
         },
         {
           "nameForRendering": "red",
@@ -826,6 +827,84 @@
       ],
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "priceRupees": 3499
+    }
+  ],
+  "newArrivals": [
+    {
+      "id": "017",
+      "name": "4004 CLASSIC CREWNECK",
+      "colors": [
+        {
+          "nameForRendering": "black sparkle",
+          "name": "black-sparkle",
+          "image": [
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748879059_683dc6d3e0388.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748879059_683dc6d3db6f9.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748878340_683dc4046779d.jpg"
+          ]
+        },
+        {
+          "nameForRendering": "heather ash",
+          "name": "heather-ash",
+          "image": [
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792252_683c73bcbe51f.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792252_683c73bcbe3ad.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792254_683c73bed8e0b.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748887749_683de8c575683.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748887751_683de8c7867cb.jpg"
+          ]
+        },
+        {
+          "nameForRendering": "olive drab",
+          "name": "olive-drab",
+          "image": [
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792382_683c743e7cccc.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792382_683c743e7c346.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792384_683c7440bdaff.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792384_683c7440bd155.jpg"
+          ]
+        },
+        {
+          "nameForRendering": "natural sparkle",
+          "name": "natural-sparkle",
+          "image": [
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792203_683c738b20156.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792203_683c738b1eac8.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792205_683c738d8a219.jpg",
+            "https://houseofblanks.s3.ca-central-1.amazonaws.com/products/1748792205_683c738dc0672.jpg"
+          ]
+        }
+      ],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "priceRupees": 7599
+    },
+    {
+      "id": "018",
+      "name": "1016 OVERSIZED BOXY T-SHIRT",
+      "colors": [
+        {
+          "nameForRendering": "black",
+          "name": "black",
+          "image": [
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_Black_01.jpg?v=1749667307&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_Black_02.jpg?v=1749667307&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_Black_01_OnFig.jpg?v=1749667324&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_Black_02_OnFig.jpg?v=1749667324&width=1100"
+          ]
+        },
+        {
+          "nameForRendering": "white",
+          "name": "white",
+          "image": [
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_White_01.jpg?v=1749667530&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_White_04.jpg?v=1749667555&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_White_06.jpg?v=1749667555&width=1100",
+            "https://www.houseofblanks.com/cdn/shop/files/1016OversizedBoxyT-Shirt_White_02.jpg?v=1749667555&width=1100"
+          ]
+        }
+      ],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "priceRupees": 2675
     }
   ]
 }
