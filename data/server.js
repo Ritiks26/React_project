@@ -14,6 +14,9 @@ const products = productsData.products;
 const productsMore = productsData.productsMore;
 const productsMoreLast = productsData.productsMoreLast;
 
+// 👇 NEW ADDITION: Load "new arrivals" if exists
+const newArrivals = productsData.newArrivals || [];
+
 let cart = JSON.parse(fs.readFileSync("cart.json", "utf-8")).cart; // let because cart will be updated
 
 // --- GET all products ---
@@ -29,6 +32,11 @@ app.get("/products-more", (req, res) => {
 // --- GET productsMoreLast ---
 app.get("/products-more-last", (req, res) => {
   res.json(productsMoreLast);
+});
+
+// --- ✅ GET new arrivals ---
+app.get("/new-arrivals", (req, res) => {
+  res.json(newArrivals);
 });
 
 // --- GET cart (with optional ?expand=products) ---
@@ -131,6 +139,6 @@ app.delete("/cart", (req, res) => {
   res.json({ message: "All items removed", cart });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -12,6 +12,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [productsMore, setProductsMore] = useState([]);
   const [productsMoreLast, setProductsMoreLast] = useState([]);
+  const [newArrivals, setNewArrivals] = useState([]);
   const [cart, setCart] = useState([]);
   // useEffect(() => {
   //   axios.get("http://localhost:9000/products").then((response) => {
@@ -54,6 +55,12 @@ function App() {
       )
       .then((response) => {
         setProductsMoreLast(response.data);
+      });
+
+    axios
+      .get("https://react-products-backend-obvl.onrender.com/new-arrivals")
+      .then((response) => {
+        setNewArrivals(response.data);
       });
   }, []);
 
