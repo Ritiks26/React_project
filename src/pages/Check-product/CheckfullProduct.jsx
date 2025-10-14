@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import { formatMoney } from "../utils/money";
+import { SuggestedProducts } from "./SuggestedProducts";
 import "./CheckfullProduct.css";
 
 export function CheckfullProduct({
@@ -305,6 +306,7 @@ export function CheckfullProduct({
           </div>
         )}
       </div>
+      <SuggestedProducts allProducts={allProducts} />
     </>
   );
 }

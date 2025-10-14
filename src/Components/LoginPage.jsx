@@ -1,8 +1,16 @@
 import googleIcon from "../assets/google.svg";
 import fbIcon from "../assets/fb.svg";
+import hideIcon from "../../src/assets/hide.png";
+import viewIcon from "../../src/assets/view.png";
+import { useState } from "react";
 import "./LoginPage.css";
 
 export function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const displayPasswordHandle = () => {
+    setShowPassword(!showPassword);
+    console.log(showPassword);
+  };
   return (
     <form>
       <div className="greets">
@@ -16,7 +24,21 @@ export function LoginPage() {
       </div>
 
       <div className="form-group">
-        <input type="password" id="password" placeholder="Password" required />
+        <div className="password-input">
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            placeholder="Password"
+            required
+          />
+
+          <img
+            onClick={displayPasswordHandle}
+            className="hide-display-message"
+            src={showPassword ? hideIcon : viewIcon}
+            alt=""
+          />
+        </div>
 
         <p className="forgot-password-link">Forgot password?</p>
       </div>

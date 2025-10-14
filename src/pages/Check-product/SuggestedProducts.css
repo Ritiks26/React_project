@@ -1,0 +1,59 @@
+.suggested-product-all {
+  font-family: general sans;
+  padding: 0 0.75rem;
+}
+
+.suggested-product-all h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.suggested-product-parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  background-color: #f0f0f0;
+  height: 50vh;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  @media (width > 500px) {
+    height: 70vh;
+  }
+}
+
+.image-wrapper {
+  height: 25vh;
+  width: 25vh;
+
+  @media (width > 500px) {
+    height: 50vh;
+    width: 50vh;
+  }
+}
+
+.suggested-product-image {
+  height: 100%;
+  width: 100%;
+}
+
+.suggested-product-content {
+  padding: 0 0.25rem;
+}
+
+.suggested-product-name {
+  font-size: clamp(0.85rem, 0.7841rem + 0.3297vw, 1rem);
+}
+
+.suggested-product-color {
+  font-size: clamp(0.8rem, 0.7121rem + 0.4396vw, 1rem);
+  margin: 0.25rem 0;
+}
+
+.suggested-product-price {
+  font-size: clamp(0.9rem, 0.856rem + 0.2198vw, 1rem);
+  font-family: clash display;
+}

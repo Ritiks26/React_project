@@ -30,11 +30,14 @@ export function CheckoutPage({
         `https://react-products-backend-obvl.onrender.com/cart/${id}?colour=${colour}&size=${size}`
       );
     } else {
-      await axios.put(`https://react-products-backend-obvl.onrender.com/cart/${id}`, {
-        quantity: quantity,
-        color: colour,
-        size: size,
-      });
+      await axios.put(
+        `https://react-products-backend-obvl.onrender.com/cart/${id}`,
+        {
+          quantity: quantity,
+          color: colour,
+          size: size,
+        }
+      );
     }
     await loadCart();
   };
