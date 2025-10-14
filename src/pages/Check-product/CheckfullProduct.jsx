@@ -14,6 +14,7 @@ export function CheckfullProduct({
   products,
   productsMore,
   productsMoreLast,
+  newArrivals,
 }) {
   const [quantity, setQuantity] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -101,13 +102,18 @@ export function CheckfullProduct({
     navigate("/checkout");
   };
 
-  const allProducts = [...products, ...productsMore, ...productsMoreLast];
+  const allProducts = [
+    ...products,
+    ...productsMore,
+    ...productsMoreLast,
+    ...newArrivals,
+  ];
 
   let matchingProduct = allProducts.find((product) => product.id === productId);
 
   useEffect(() => {
     if (matchingProduct && matchingProduct.colors?.length > 0) {
-      setSelectedColour(matchingProduct.colors[0].name);
+      setSelectedColour(matchingProduct.colors[0].nameForRendering);
       setChangeProductColor(0);
     }
   }, [matchingProduct]);
@@ -217,7 +223,7 @@ export function CheckfullProduct({
                         selectedColour === color.name ? "active" : ""
                       }`}
                       onClick={() => {
-                        setSelectedColour(color.name);
+                        setSelectedColour(color.nameForRendering);
                         setChangeProductColor(index);
                       }}
                     ></div>

@@ -92,6 +92,7 @@ function App() {
               products={products}
               productsMore={productsMore}
               productsMoreLast={productsMoreLast}
+              newArrivals={newArrivals}
               loadCart={loadCart}
             />
           }
@@ -122,6 +123,7 @@ function App() {
               products={products}
               productsMore={productsMore}
               productsMoreLast={productsMoreLast}
+              newArrivals={newArrivals}
             />
           }
         />

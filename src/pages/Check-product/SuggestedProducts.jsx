@@ -28,7 +28,7 @@ export function SuggestedProducts({ allProducts }) {
               <p className="suggested-product-color">
                 <strong>
                   {product.colors
-                    ? product.colors[2].name.toUpperCase()
+                    ? product.colors[2].nameForRendering.toUpperCase()
                     : product.name}
                 </strong>
               </p>

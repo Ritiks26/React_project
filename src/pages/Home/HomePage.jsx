@@ -15,6 +15,7 @@ export function HomePage({
   products,
   productsMore,
   productsMoreLast,
+  newArrivals,
 }) {
   return (
     <>
@@ -31,7 +32,7 @@ export function HomePage({
       <GlowingSuggestionsRight />
       <ReusableProductsContainer products={productsMore} />
       <ReusableProductsContainer products={productsMoreLast} />
-      <NewArrivals />
+      <NewArrivals newArrivals={newArrivals} />
       <Hero />
       {/* <BentoGrid /> */}
     </>
