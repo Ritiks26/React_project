@@ -48,7 +48,8 @@ app.get("/cart", (req, res) => {
       const product =
         products.find((p) => p.id === item.id) ||
         productsMore.find((p) => p.id === item.id) ||
-        productsMoreLast.find((p) => p.id === item.id);
+        productsMoreLast.find((p) => p.id === item.id) ||
+        newArrivals.find((p) => p.id === item.id);
 
       // include only the color selected in cart
       const productImage =
