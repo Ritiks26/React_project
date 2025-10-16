@@ -4,7 +4,9 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import { formatMoney } from "../utils/money";
+import { ProductInfoAccordion } from "./ProductInfoAccordion";
 import { SuggestedProducts } from "./SuggestedProducts";
+import { Footer } from "../../Components/Footer";
 import "./CheckfullProduct.css";
 
 export function CheckfullProduct({
@@ -16,12 +18,11 @@ export function CheckfullProduct({
   productsMoreLast,
   newArrivals,
 }) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColour, setSelectedColour] = useState();
   const [showSizeMessage, setShowSizeMessage] = useState(false);
   const [showColourMessage, setShowColourMessage] = useState(false);
-  const [showQuantityMessage, setShowQuantityMessage] = useState(false);
   const [changeProductColor, setChangeProductColor] = useState(0);
   const [slider, setSlider] = useState(0);
   const { productId } = useParams();
@@ -50,7 +51,7 @@ export function CheckfullProduct({
   };
 
   const decreaseQuantity = () => {
-    if (quantity <= 0) return;
+    if (quantity <= 1) return;
     setQuantity(quantity - 1);
   };
 
@@ -75,16 +76,6 @@ export function CheckfullProduct({
 
       setTimeout(() => {
         setShowColourMessage(false);
-      }, 3000);
-
-      return;
-    }
-
-    if (!quantity) {
-      setShowQuantityMessage(true);
-
-      setTimeout(() => {
-        setShowQuantityMessage(false);
       }, 3000);
 
       return;
@@ -295,24 +286,10 @@ export function CheckfullProduct({
             <p>Select a colour</p>
           </div>
         )}
-        {showQuantityMessage && (
-          <div className="quantity-message-content">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="red"
-              class="bi bi-exclamation-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
-            </svg>
-            <p>Select a quantity</p>
-          </div>
-        )}
       </div>
+      <ProductInfoAccordion />
       <SuggestedProducts allProducts={allProducts} />
+      <Footer />
     </>
   );
 }

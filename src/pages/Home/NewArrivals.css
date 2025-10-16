@@ -31,6 +31,11 @@
     left: 0;
     position: absolute;
     background-color: black;
+
+    @media (width > 500px) {
+      height: 4%;
+      width: 55%;
+    }
   }
 
   &::before {
@@ -41,6 +46,11 @@
     bottom: 0;
     position: absolute;
     background-color: black;
+
+    @media (width > 500px) {
+      height: 4%;
+      width: 51.5%;
+    }
   }
 }
 

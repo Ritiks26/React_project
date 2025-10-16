@@ -14,6 +14,9 @@ export function Header({
   productsMore,
   productsMoreLast,
 }) {
+  const [showSearch, setShowSearch] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const [mobileMenu, setMobileMenu] = useState(false);
   const [search, setSearch] = useState("");
   const mobileMenuRef = useRef();
@@ -48,6 +51,24 @@ export function Header({
   const filteredProducts = allProducts.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      if (currentY > lastScrollY && currentY > 50) {
+        setShowSearch(false);
+      } else if (currentY < lastScrollY) {
+        setShowSearch(true);
+      }
+
+      setLastScrollY(currentY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <>
@@ -291,23 +312,24 @@ export function Header({
             </div>
           )}
         </div>
-
-        <div className="android-search-bar">
-          <input
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-            }}
-            type="text"
-            placeholder="SEARCH!"
-          />
-          <img
-            className="android-search-icon"
-            src="https://www.svgrepo.com/show/7109/search.svg"
-            alt=""
-          />
-        </div>
       </header>
+      <div
+        className={`android-search-bar ${showSearch ? "visible" : "hidden"}`}
+      >
+        <input
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          type="text"
+          placeholder="SEARCH!"
+        />
+        <img
+          className="android-search-icon"
+          src="https://www.svgrepo.com/show/7109/search.svg"
+          alt=""
+        />
+      </div>
     </>
   );
 }

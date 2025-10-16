@@ -9,7 +9,7 @@ export function SuggestedProducts({ allProducts }) {
       <div className="suggested-product-parent">
         {allProducts.slice(9, 13).map((product) => (
           <div key={product.id} className="suggested-product-container">
-            <div className="image-wrapper">
+            <div className="suggested-image-wrapper">
               <img
                 className="suggested-product-image"
                 src={

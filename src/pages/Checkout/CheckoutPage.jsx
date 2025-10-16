@@ -1,6 +1,7 @@
 import { formatMoney } from "../utils/money";
 import { Link } from "react-router";
 import { Header } from "../../Components/Header";
+import { Footer } from "../../Components/Footer";
 import "./CheckoutPage.css";
 import axios from "axios";
 
@@ -191,9 +192,8 @@ export function CheckoutPage({
             </div>
           </div>
         )}
-
-        <div className="confirmation-box js-confirmation-box"></div>
       </div>
+      <Footer />
     </>
   );
 }

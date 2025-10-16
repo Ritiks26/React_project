@@ -12,11 +12,16 @@
 
   &::after {
     content: "";
-    height: 4%;
+    height: 5%;
     width: 68%;
     left: 0;
     position: absolute;
     background-color: black;
+
+    @media (width > 500px) {
+      height: 4%;
+      width: 56%;
+    }
   }
 
   &::before {
@@ -27,6 +32,11 @@
     bottom: 0;
     position: absolute;
     background-color: black;
+
+    @media (width > 500px) {
+      height: 4%;
+      width: 51%;
+    }
   }
 }
 

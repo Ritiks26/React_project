@@ -9,6 +9,7 @@ import { GlowingSuggestionsRight } from "../../Components/GlowingSuggestionsRigh
 import { NewArrivals } from "./NewArrivals";
 import { Hero } from "./Hero";
 import { BentoGrid } from "./BentoGrid";
+import { Footer } from "../../Components/Footer";
 
 export function HomePage({
   totalQuantity,
@@ -27,14 +28,21 @@ export function HomePage({
         productsMoreLast={productsMoreLast}
       />
       <MarqueePictures />
-      <ReusableProductsContainer products={products} />
+      <ReusableProductsContainer title="TRENDING NOW" products={products} />
       <GlowingSuggestions />
       <GlowingSuggestionsRight />
-      <ReusableProductsContainer products={productsMore} />
-      <ReusableProductsContainer products={productsMoreLast} />
-      <NewArrivals newArrivals={newArrivals} />
+      <ReusableProductsContainer
+        title="LIMITED EDITIONS"
+        products={productsMore}
+      />
+      <ReusableProductsContainer
+        title="ESSENTIALS OF THE SEASON"
+        products={productsMoreLast}
+      />
+      <NewArrivals title="NEW ARRIVALS" newArrivals={newArrivals} />
       <Hero />
       {/* <BentoGrid /> */}
+      <Footer />
     </>
   );
 }

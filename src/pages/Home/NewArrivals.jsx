@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 import "./NewArrivals.css";
 
-export function NewArrivals({ newArrivals }) {
+export function NewArrivals({ title, newArrivals }) {
   return (
     <div className="arrivals-all">
-      <h1>NEW ARRIVALS</h1>
+      <h1>{title}</h1>
       <div className="new-arrivals-container">
         {newArrivals.map((product) => (
           <div className="new-arrivals-child">

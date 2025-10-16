@@ -1,6 +1,10 @@
 body {
   padding-top: 55px;
   margin: 0;
+
+  &::selection {
+    background-color: #c9c8c8;
+  }
 }
 
 html {

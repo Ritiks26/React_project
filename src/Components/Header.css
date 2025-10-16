@@ -196,14 +196,14 @@ nav {
   display: none;
 }
 
-ul {
+nav ul {
   display: flex;
   list-style: none;
   padding: 0rem 1rem;
   gap: 1.25rem;
 }
 
-ul li {
+nav ul li {
   position: relative;
 }
 
@@ -355,8 +355,8 @@ nav li:hover .dropdown li a {
   font-weight: 500;
   font-size: 3rem;
   padding: 2rem 0rem;
-  background-color: #ffffff;
-  backdrop-filter: blur(2px);
+  background-color: rgba(250, 235, 215, 0.515);
+  backdrop-filter: blur(4rem);
   transform: translateX(200%);
   z-index: 15;
   height: 100vh;
@@ -400,7 +400,7 @@ nav li:hover .dropdown li a {
   max-height: 100vh;
   left: 0%;
   right: 0%;
-  top: 100%;
+  top: 146%;
   padding: 0.25rem 0.75rem;
 
   overflow-y: auto;
@@ -409,6 +409,7 @@ nav li:hover .dropdown li a {
 
   @media (width > 500px) {
     left: 60%;
+    top: 100%;
     min-height: 20vh;
   }
 }
@@ -476,19 +477,32 @@ nav li:hover .dropdown li a {
 }
 
 .android-search-bar {
-  position: relative;
+  position: sticky;
+  z-index: 45;
+  top: 9.5%;
+  left: 0;
+  right: 0;
   height: 6vh;
   box-sizing: border-box;
-  padding: 0rem 0.5rem;
+  transition: transform 0.3s ease;
 
   @media (width > 500px) {
     display: none;
   }
 }
 
+.android-search-bar.visible {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.android-search-bar.hidden {
+  transform: translateY(-500%);
+}
+
 .android-search-bar input {
   border: 1px solid lightgray;
-  height: 4vh;
+  height: 4.25vh;
   border-radius: 4px;
   font-size: 0.72rem;
   font-family: general sans;
@@ -504,7 +518,7 @@ nav li:hover .dropdown li a {
 .android-search-icon {
   position: absolute;
   top: 18%;
-  left: 4%;
+  left: 2%;
   height: 16px;
   width: 16px;
 }

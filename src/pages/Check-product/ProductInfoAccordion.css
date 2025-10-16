@@ -1,0 +1,40 @@
+.helping-container {
+  font-family: general sans;
+  padding: 0.5rem 0.75rem;
+}
+
+.helping-container-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  width: 100%;
+  height: 5vh;
+  z-index: 10;
+}
+
+.helping-container > div:nth-child(5) {
+  border-bottom: 1px solid lightgray;
+}
+
+.helping-container p {
+  font-size: 1rem;
+  color: gray;
+}
+
+.helping-container img {
+  height: 18px;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  overflow: hidden;
+  height: 5vh;
+}
+
+.content {
+  margin: 0.5rem 0;
+}

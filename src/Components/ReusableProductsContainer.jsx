@@ -2,10 +2,10 @@ import { Link } from "react-router";
 import { formatMoney } from "../pages/utils/money";
 import "./ReusableProductsContainer.css";
 
-export function ReusableProductsContainer({ products }) {
+export function ReusableProductsContainer({ title, products }) {
   return (
     <div className="products-container-all">
-      <h1>TRENDING NOW</h1>
+      <h1>{title}</h1>
       <div className="products-parent-container">
         {products.map((product) => {
           return (
