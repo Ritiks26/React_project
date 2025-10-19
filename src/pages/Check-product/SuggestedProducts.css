@@ -28,6 +28,8 @@
 .suggested-image-wrapper {
   height: 25vh;
   width: 25vh;
+  position: relative;
+  overflow: hidden;
 
   @media (width > 500px) {
     height: 50vh;

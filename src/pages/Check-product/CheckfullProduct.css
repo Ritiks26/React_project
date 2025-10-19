@@ -706,9 +706,11 @@
   padding: 0.5rem 1rem;
   gap: 0.5rem;
   z-index: 40;
+  height: 7.5vh;
+  width: 100%;
 
   background-color: rgb(255, 255, 255);
-  /* box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -717,19 +719,20 @@
   @media (width > 500px) {
     margin: 0.5rem 0rem;
     position: relative;
+    min-height: 9vh;
+    box-shadow: none;
   }
 }
 
 .quantity-selection {
   display: grid;
-  grid-template-columns: 30px 1fr 30px;
-  gap: 0.85rem;
+  grid-template-columns: 35px 1fr 35px;
+  gap: 0.75rem;
   align-items: center;
   font-family: general sans;
-  padding: 0.25rem 0.5rem;
-  background-color: #222;
+  border: 1px solid gray;
   border-radius: 0.5rem;
-
+  height: 100%;
   width: fit-content;
 }
 
@@ -739,9 +742,8 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: white;
+  color: black;
   font-weight: 400;
-  height: 35px;
   border-radius: 50%;
 
   cursor: pointer;
@@ -753,7 +755,7 @@
   justify-content: center;
   font-size: 1.25rem;
 
-  color: whitesmoke;
+  color: black;
   font-weight: 500;
   height: 35px;
   border-radius: 50%;
@@ -762,19 +764,20 @@
 }
 
 .cart-button {
-  min-height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .cart-button button {
-  background-color: lightgray;
+  background-color: black;
   border: none;
-  color: black;
+  color: white;
   font-family: general sans;
   font-size: 0.85rem;
   font-weight: 500;
-  padding: 0.75rem 1rem;
+  /* padding: 0.75rem 1rem; */
   border-radius: 0.5rem;
+  height: 100%;
   width: 100%;
 
   transition: all 0.25s ease-in-out;
@@ -786,7 +789,7 @@
 }
 
 .cart-button button:hover {
-  background-color: #fd7453;
+  background-color: #222;
   color: white;
   cursor: pointer;
 }

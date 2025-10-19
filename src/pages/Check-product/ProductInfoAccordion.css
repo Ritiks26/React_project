@@ -1,6 +1,12 @@
 .helping-container {
   font-family: general sans;
   padding: 0.5rem 0.75rem;
+  width: 100%;
+  border-top: 1px solid lightgray;
+
+  @media (width > 500px) {
+    width: 50%;
+  }
 }
 
 .helping-container-child {
@@ -29,10 +35,10 @@
 .outer-container {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
   overflow: hidden;
   height: 5vh;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 .content {
