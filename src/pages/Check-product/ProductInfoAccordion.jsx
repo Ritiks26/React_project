@@ -12,7 +12,12 @@ const sections = [
   {
     title: "Fabric Information",
     content:
-      "International orders will be delivered express through DHL Express. All orders will be sent with a tracking number once dispatched from the warehouse. For more information about shipping, see here. International orders will be delivered express through DHL Express. All orders will be sent with a tracking number once dispatched from the warehouse. For more information about shipping, see here. International orders will be delivered express through DHL Express. All orders will be sent with a tracking number once dispatched from the warehouse. For more information about shipping, see here",
+      "International orders will be delivered express through DHL Express. All orders will be sent with a tracking number once dispatched from the warehouse. For more information about shipping, see here. International orders will be delivered express through DHL Express.",
+  },
+  {
+    title: "Size Guide",
+    content:
+      "International orders will be delivered express through DHL Express. All orders will be sent with a tracking number once dispatched from the warehouse. For more information about shipping, see here. International orders will be delivered express through DHL Express.",
   },
 ];
 
@@ -58,6 +63,7 @@ export function ProductInfoAccordion() {
   };
   return (
     <div className="helping-container">
+      <div className="divider"></div>
       {sections.map((sec, i) => (
         <div
           key={i}

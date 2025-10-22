@@ -1,8 +1,8 @@
 .helping-container {
   font-family: general sans;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   width: 100%;
-  border-top: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
 
   @media (width > 500px) {
     width: 50%;
@@ -19,9 +19,9 @@
   z-index: 10;
 }
 
-.helping-container > div:nth-child(5) {
+/* .helping-container > div:nth-child(5) {
   border-bottom: 1px solid lightgray;
-}
+} */
 
 .helping-container p {
   font-size: 1rem;
@@ -37,10 +37,16 @@
   flex-direction: column;
   overflow: hidden;
   height: 5vh;
-  border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  /* background-color: aqua; */
 }
 
 .content {
   margin: 0.5rem 0;
+}
+
+.divider {
+  width: 100%;
+  background-color: aquamarine;
+  border-top: 1px solid lightgrey;
 }
