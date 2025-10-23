@@ -60,7 +60,7 @@
   color: rgb(209, 209, 209);
   font-weight: 500;
 
-  font-family: general sans;
+  font-family: var(--font1);
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
@@ -78,7 +78,7 @@
 .text {
   color: rgb(255, 255, 255);
   font-size: 1.25rem;
-  font-family: clash display;
+  font-family: var(--font3);
   font-weight: 600;
   display: inline-block;
   position: absolute;

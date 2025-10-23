@@ -8,7 +8,7 @@
   margin: 0.25rem 0;
   height: fit-content;
   text-align: center;
-  font-family: general sans;
+  font-family: var(--font1);
 
   &::after {
     content: "";
@@ -66,7 +66,7 @@
 
 .product-content {
   min-height: 100%;
-  font-family: clash display;
+  font-family: var(--font3);
   padding: 0rem 0.35rem;
   text-align: center;
 }
@@ -118,7 +118,7 @@
   border-radius: 50%;
 
   font-size: 0.55rem;
-  font-family: general sans;
+  font-family: var(--font1);
   cursor: pointer;
   position: absolute;
   inset: 0;

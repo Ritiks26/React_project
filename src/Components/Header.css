@@ -103,7 +103,7 @@ header {
   padding-left: 1.85rem;
   font-size: 1rem;
   border-radius: 0.5rem;
-  font-family: general sans;
+  font-family: var(--font1);
   background-color: #f4f4f400;
   border: none;
   color: var(--clr-black-full);
@@ -177,7 +177,7 @@ header {
   top: -8px;
   right: -4px;
   font-size: 0.75rem;
-  font-family: general sans;
+  font-family: var(--font1);
   background-color: #000000;
   color: #d3d3d3;
   height: 18px;
@@ -210,7 +210,7 @@ nav ul li {
 .all-lists {
   text-decoration: none;
   color: var(--clr-black-full);
-  font-family: general sans;
+  font-family: var(--font1);
   font-weight: 300;
   transition: 0.15s;
 
@@ -316,7 +316,7 @@ nav ul li {
 
 .dropdown li {
   font-size: 0.9rem;
-  font-family: general sans;
+  font-family: var(--font1);
   cursor: pointer;
 
   width: fit-content;
@@ -351,7 +351,7 @@ nav li:hover .dropdown li a {
   justify-content: center;
   overflow: hidden;
 
-  font-family: general sans;
+  font-family: var(--font1);
   font-weight: 500;
   font-size: 3rem;
   padding: 2rem 0rem;
@@ -439,7 +439,7 @@ nav li:hover .dropdown li a {
 }
 
 .filteredProduct-details {
-  font-family: general sans;
+  font-family: var(--font1);
   cursor: pointer;
   width: 100%;
   padding: 0.25rem 0rem;
@@ -456,7 +456,7 @@ nav li:hover .dropdown li a {
 }
 
 .filteredProduct-price {
-  font-family: clash display;
+  font-family: var(--font3);
   font-size: clamp(0.8rem, 0.7091rem + 0.4545vw, 1rem);
 }
 
@@ -468,7 +468,7 @@ nav li:hover .dropdown li a {
 
 .nothing-found-message {
   min-height: 8vh;
-  font-family: general sans;
+  font-family: var(--font1);
   font-weight: 400;
   font-size: clamp(0.85rem, 0.7818rem + 0.3409vw, 1rem);
   display: flex;
@@ -505,14 +505,14 @@ nav li:hover .dropdown li a {
   height: 4.25vh;
   border-radius: 4px;
   font-size: 0.72rem;
-  font-family: general sans;
+  font-family: var(--font1);
   padding: 0rem 0.25rem;
   padding-left: 1.75rem;
 }
 
 .android-search-bar input::placeholder {
   font-size: 0.72rem;
-  font-family: general sans;
+  font-family: var(--font1);
 }
 
 .android-search-icon {

@@ -1,5 +1,5 @@
 .suggested-product-all {
-  font-family: general sans;
+  font-family: var(--font1);
   padding: 0 0.5rem;
 }
 
@@ -57,5 +57,5 @@
 
 .suggested-product-price {
   font-size: clamp(0.9rem, 0.856rem + 0.2198vw, 1rem);
-  font-family: clash display;
+  font-family: var(--font3);
 }

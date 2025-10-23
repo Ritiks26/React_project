@@ -67,12 +67,12 @@
 
 .USP h5 {
   text-align: center;
-  font-family: clash display;
+  font-family: var(--font3);
 }
 
 .USP p {
   text-align: center;
-  font-family: general sans;
+  font-family: var(--font1);
   color: rgba(37, 37, 37, 0.69);
   background-image: linear-gradient(black, black);
   background-size: 0% 100%;
