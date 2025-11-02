@@ -144,16 +144,14 @@ export function CheckfullProduct({
               <svg
                 aria-hidden="true"
                 focusable="false"
-                class="icon-left"
+                className="icon-left"
                 viewBox="0 0 10 6"
                 height="20px"
                 width="20px"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
                   d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                  fill="currentColor"
+                  fill="gray"
                 ></path>
               </svg>
             </div>
@@ -172,16 +170,14 @@ export function CheckfullProduct({
               <svg
                 aria-hidden="true"
                 focusable="false"
-                class="icon-right"
+                className="icon-right"
                 viewBox="0 0 10 6"
                 height="20px"
                 width="20px"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
                   d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                  fill="currentColor"
+                  fill="gray"
                 ></path>
               </svg>
             </div>

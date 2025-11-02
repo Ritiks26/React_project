@@ -11,7 +11,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -19,7 +19,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -27,7 +27,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -35,7 +35,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -43,7 +43,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -51,7 +51,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -59,7 +59,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"
@@ -67,7 +67,7 @@ export function MarqueePictures() {
         />
       </div>
 
-      <div moving-pic-child>
+      <div className="moving-pic-child">
         <img
           className="MovingPics"
           src="https://genevievesweeney.com/cdn/shop/files/Genevieve-Sweeney-Oversized-Lambswool-Geometric-Scarf-Pink.jpg?v=1751032896&width=540"

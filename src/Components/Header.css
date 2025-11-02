@@ -13,7 +13,6 @@ header {
 .header {
   height: 70px;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -400,7 +399,7 @@ nav li:hover .dropdown li a {
   max-height: 100vh;
   left: 0%;
   right: 0%;
-  top: 146%;
+  top: 100%;
   padding: 0.25rem 0.75rem;
 
   overflow-y: auto;
@@ -477,48 +476,43 @@ nav li:hover .dropdown li a {
 }
 
 .android-search-bar {
-  position: sticky;
-  z-index: 45;
-  top: 9.5%;
-  left: 0;
-  right: 0;
+  position: relative;
+  display: flex;
+  align-items: start;
   height: 6vh;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
+  padding: 0 0.45rem;
+  overflow: hidden;
 
   @media (width > 500px) {
-    display: none;
+    display: none !important;
   }
-}
-
-.android-search-bar.visible {
-  opacity: 1;
-  transform: translateX(0%);
-}
-
-.android-search-bar.hidden {
-  transform: translateY(-500%);
 }
 
 .android-search-bar input {
   border: 1px solid lightgray;
-  height: 4.25vh;
-  border-radius: 4px;
-  font-size: 0.72rem;
+  height: 90%;
+  font-size: 0.85rem;
   font-family: var(--font1);
   padding: 0rem 0.25rem;
-  padding-left: 1.75rem;
+  padding-left: 2.25rem;
+  border-radius: 8px;
 }
 
 .android-search-bar input::placeholder {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-family: var(--font1);
 }
 
 .android-search-icon {
   position: absolute;
-  top: 18%;
-  left: 2%;
+  top: 30%;
+  left: 5%;
   height: 16px;
   width: 16px;
+}
+
+.body-lock {
+  height: 100vh;
+  overflow: hidden;
 }

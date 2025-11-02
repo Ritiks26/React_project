@@ -6,6 +6,7 @@
   grid-template-columns: repeat(9, 320px);
   column-gap: 0.15rem;
   overflow: hidden;
+  margin-top: 2.5rem;
 }
 
 .MovingPics {
@@ -24,10 +25,11 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (width > 600px) {
   .movingPics-container {
     width: 100%;
     grid-template-columns: repeat(9, 320px);
+    margin: 0;
 
     overflow: hidden;
   }

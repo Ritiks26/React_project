@@ -5,8 +5,8 @@ import shoppingBag from "../../src/assets/shopping-bag.svg";
 import menuBar from "../../src/assets/hamburger-menu.svg";
 import logo from "../../src/assets/nike-logo.svg";
 import removeIcon from "../../src/assets/remove-icon.svg";
-import "./Header.css";
 import gsap from "gsap";
+import "./Header.css";
 
 export function Header({
   totalQuantity,
@@ -14,13 +14,13 @@ export function Header({
   productsMore,
   productsMoreLast,
 }) {
-  const [showSearch, setShowSearch] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const [mobileMenu, setMobileMenu] = useState(false);
   const [search, setSearch] = useState("");
   const mobileMenuRef = useRef();
   const dropMenuRef = useRef();
+  const androidSearchBarRef = useRef(null);
   const t1 = useRef();
 
   useEffect(() => {
@@ -41,8 +41,10 @@ export function Header({
   useEffect(() => {
     if (mobileMenu) {
       t1.current.play();
+      document.body.classList.add("body-lock");
     } else {
       t1.current.reverse();
+      document.body.classList.remove("body-lock");
     }
   }, [mobileMenu]);
 
@@ -56,19 +58,28 @@ export function Header({
     const handleScroll = () => {
       const currentY = window.scrollY;
 
-      if (currentY > lastScrollY && currentY > 50) {
-        setShowSearch(false);
-      } else if (currentY < lastScrollY) {
-        setShowSearch(true);
+      if (currentY > scrollY && currentY > 50) {
+        gsap.to(androidSearchBarRef.current, {
+          height: "0vh",
+          opacity: 0,
+          duration: 0.3,
+          // ease: "power2.out",
+        });
+      } else if (currentY < scrollY) {
+        gsap.to(androidSearchBarRef.current, {
+          height: "6vh",
+          opacity: 1,
+          duration: 0.3,
+        });
       }
 
-      setLastScrollY(currentY);
+      setScrollY(currentY);
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [scrollY]);
 
   return (
     <>
@@ -278,6 +289,21 @@ export function Header({
               </div>
             </div>
           </div>
+        </div>
+        <div ref={androidSearchBarRef} className="android-search-bar">
+          <input
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            type="text"
+            placeholder="SEARCH!"
+          />
+          <img
+            className="android-search-icon"
+            src="https://www.svgrepo.com/show/7109/search.svg"
+            alt=""
+          />
 
           {search !== "" && (
             <div className="filteredProducts-container">
@@ -313,23 +339,6 @@ export function Header({
           )}
         </div>
       </header>
-      <div
-        className={`android-search-bar ${showSearch ? "visible" : "hidden"}`}
-      >
-        <input
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-          type="text"
-          placeholder="SEARCH!"
-        />
-        <img
-          className="android-search-icon"
-          src="https://www.svgrepo.com/show/7109/search.svg"
-          alt=""
-        />
-      </div>
     </>
   );
 }

@@ -7,7 +7,7 @@ export function NewArrivals({ title, newArrivals }) {
       <h1>{title}</h1>
       <div className="new-arrivals-container">
         {newArrivals.map((product) => (
-          <div className="new-arrivals-child">
+          <div key={product.id} className="new-arrivals-child">
             <Link to={`/product/${product.id}`}>
               <img src={product.colors[0].image[0]} alt="" />
             </Link>
