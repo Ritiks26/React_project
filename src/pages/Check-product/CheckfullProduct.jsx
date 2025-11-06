@@ -31,18 +31,18 @@ export function CheckfullProduct({
   const rightSlide = (image) => {
     setSlider((prev) => {
       if (prev < image.length - 1) {
-        return prev + 1; // sirf aage badhega agar last image se pehle hai
+        return prev + 1;
       }
-      return prev; // agar last image hai to wahi ruk jaayega
+      return prev;
     });
   };
 
   const leftSlide = (image) => {
     setSlider((prev) => {
       if (prev > 0) {
-        return prev - 1; // sirf peeche aayega agar first se aage hai
+        return prev - 1;
       }
-      return prev; // first image par koi aur action nahi
+      return prev;
     });
   };
 

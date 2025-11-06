@@ -203,6 +203,7 @@
 }
 
 .size-selection.active {
+  position: relative;
   border: 1px solid #000000;
   background-color: #000000;
   color: white;
@@ -212,16 +213,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 44px;
-    width: 44px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #000000;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -255,22 +250,17 @@
 }
 
 .colour-selection.white.active {
+  position: relative;
   height: 40px;
   width: 40px;
 
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid rgb(0, 0, 0);
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -285,6 +275,7 @@
 }
 
 .colour-selection.black.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -292,16 +283,12 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid rgb(0, 0, 0);
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
+
   @media (width > 500px) {
     height: 46px;
     width: 46px;
@@ -313,6 +300,7 @@
 }
 
 .colour-selection.dusty-rose.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -320,16 +308,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #daa5a4;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -343,6 +325,7 @@
 }
 
 .colour-selection.navy.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -350,16 +333,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #1a2030;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -373,6 +350,7 @@
 }
 
 .colour-selection.heather-gray.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -380,16 +358,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #b6b4b2;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -403,6 +375,7 @@
 }
 
 .colour-selection.natural.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -410,16 +383,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #e8dfc8;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -433,6 +400,7 @@
 }
 
 .colour-selection.heather-ash.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -440,16 +408,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #e6e7f2;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -463,6 +425,7 @@
 }
 
 .colour-selection.sand.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -470,16 +433,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #cbbcad;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -493,6 +450,7 @@
 }
 
 .colour-selection.sage.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -500,16 +458,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #b8c3b6;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -523,6 +475,7 @@
 }
 
 .colour-selection.washed-indigo.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -530,16 +483,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #5b6d91;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -553,6 +500,7 @@
 }
 
 .colour-selection.forest-green.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -560,16 +508,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #22352f;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -583,6 +525,7 @@
 }
 
 .colour-selection.olive-drab.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -590,16 +533,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #494832;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -613,6 +550,7 @@
 }
 
 .colour-selection.chocolate-brown.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -620,16 +558,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #483633;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -643,6 +575,7 @@
 }
 
 .colour-selection.red.active {
+  position: relative;
   border: none;
   height: 40px;
   width: 40px;
@@ -650,16 +583,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #8b1e29;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
@@ -684,16 +611,10 @@
   &::before {
     content: "";
     position: absolute;
-    height: 42px;
-    width: 42px;
+    inset: -0.25rem;
     border-radius: 50%;
 
     border: 2px solid #1c1c22;
-
-    @media (width > 500px) {
-      height: 50px;
-      width: 50px;
-    }
   }
 
   @media (width > 500px) {
