@@ -492,7 +492,9 @@ nav li:hover .dropdown li a {
 .android-search-bar input {
   border: 1px solid lightgray;
   height: 90%;
+  width: 100%;
   font-size: 0.85rem;
+  outline: none;
   font-family: var(--font1);
   padding: 0rem 0.25rem;
   padding-left: 2.25rem;

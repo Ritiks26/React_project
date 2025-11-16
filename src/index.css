@@ -1,5 +1,4 @@
 body {
-  padding-top: 55px;
   margin: 0;
 
   &::selection {
@@ -20,4 +19,16 @@ html {
   --font1: "general sans";
   --font2: "inter";
   --font3: "clash display";
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+div,
+input,
+img {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }

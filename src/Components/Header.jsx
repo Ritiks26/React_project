@@ -53,6 +53,7 @@ export function Header({
   const filteredProducts = allProducts.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
+  console.log(search);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +64,6 @@ export function Header({
           height: "0vh",
           opacity: 0,
           duration: 0.3,
-          // ease: "power2.out",
         });
       } else if (currentY < scrollY) {
         gsap.to(androidSearchBarRef.current, {
@@ -304,40 +304,39 @@ export function Header({
             src="https://www.svgrepo.com/show/7109/search.svg"
             alt=""
           />
-
-          {search !== "" && (
-            <div className="filteredProducts-container">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
-                  <Link
-                    key={product.id}
-                    className="Link"
-                    to={`product/${product.id}`}
-                  >
-                    <div className="filteredProduct-card">
-                      <div className="filteredProduct-image">
-                        <img src={product.colors[0].image[0]} alt="" />
-                      </div>
-                      <div className="filteredProduct-details">
-                        <h3>{product.name}</h3>
-                        <p className="filteredProduct-color">
-                          {product.colors[0].name.toUpperCase()}
-                        </p>
-                        <p className="filteredProduct-price">
-                          ₹{product.priceRupees}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ))
-              ) : (
-                <div className="nothing-found-message">
-                  <p>No product found!</p>
-                </div>
-              )}
-            </div>
-          )}
         </div>
+        {search !== "" && (
+          <div className="filteredProducts-container">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <Link
+                  key={product.id}
+                  className="Link"
+                  to={`product/${product.id}`}
+                >
+                  <div className="filteredProduct-card">
+                    <div className="filteredProduct-image">
+                      <img src={product.colors[0].image[0]} alt="" />
+                    </div>
+                    <div className="filteredProduct-details">
+                      <h3>{product.name}</h3>
+                      <p className="filteredProduct-color">
+                        {product.colors[0].name.toUpperCase()}
+                      </p>
+                      <p className="filteredProduct-price">
+                        ₹{product.priceRupees}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <div className="nothing-found-message">
+                <p>No product found!</p>
+              </div>
+            )}
+          </div>
+        )}
       </header>
     </>
   );
