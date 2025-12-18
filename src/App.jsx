@@ -14,29 +14,8 @@ function App() {
   const [productsMoreLast, setProductsMoreLast] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [cart, setCart] = useState([]);
-  // useEffect(() => {
-  //   axios.get("http://localhost:9000/products").then((response) => {
-  //     setProducts(response.data);
-  //   });
-
-  //   axios.get("http://localhost:9000/products-More").then((response) => {
-  //     setProductsMore(response.data);
-  //   });
-
-  //   axios.get("http://localhost:9000/products-more-last").then((response) => {
-  //     setProductsMoreLast(response.data);
-  //   });
-  // }, []);
-
-  // const loadCart = async () => {
-  //   const response = await axios.get(
-  //     "http://localhost:9000/cart?expand=products"
-  //   );
-  //   setCart(response.data);
-  // };
 
   useEffect(() => {
-    // axios.get("https://react-products-backend-obvl.onrender.com/products").then((response) => {
     axios
       .get("https://react-products-backend-obvl.onrender.com/products")
       .then((response) => {

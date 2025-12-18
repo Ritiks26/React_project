@@ -115,7 +115,7 @@ export function CheckfullProduct({
 
   return (
     <>
-      <title>Product</title>
+      <title>RSNB - Product</title>
       <Header
         totalQuantity={totalQuantity}
         products={products}

@@ -45,7 +45,7 @@ export function CheckoutPage({
 
   return (
     <>
-      <title>Checkout</title>
+      <title>RSNB - Checkout</title>
 
       <Header
         totalQuantity={totalQuantity}

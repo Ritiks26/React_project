@@ -13,11 +13,7 @@ export function ReusableProductsContainer({ title, products }) {
               <div className="image-wrapper">
                 <img
                   className="products-image"
-                  src={
-                    product.colors
-                      ? product.colors[0].image
-                      : "something went wrong"
-                  }
+                  src={product.colors[0].image[0]}
                 />
                 <Link to={`/product/${product.id}`}>
                   <button className="view-product-button">VIEW PRODUCT</button>
@@ -27,11 +23,7 @@ export function ReusableProductsContainer({ title, products }) {
               <div className="product-content">
                 <p className="product-name">{product.name}</p>
                 <p className="product-color">
-                  <strong>
-                    {product.colors
-                      ? product.colors[0].name.toUpperCase()
-                      : product.name}
-                  </strong>
+                  <strong>{product.colors[0].name.toUpperCase()}</strong>
                 </p>
                 <p className="product-price">
                   {formatMoney(product.priceRupees)}

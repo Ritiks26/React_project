@@ -21,7 +21,7 @@ export function Header({
   const mobileMenuRef = useRef();
   const dropMenuRef = useRef();
   const androidSearchBarRef = useRef(null);
-  const t1 = useRef();
+  const t1 = useRef(null);
 
   useEffect(() => {
     t1.current = gsap.timeline({ paused: true });
@@ -53,7 +53,6 @@ export function Header({
   const filteredProducts = allProducts.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
-  console.log(search);
 
   useEffect(() => {
     const handleScroll = () => {

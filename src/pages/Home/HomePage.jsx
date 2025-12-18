@@ -20,7 +20,7 @@ export function HomePage({
 }) {
   return (
     <>
-      <title>RSNB</title>
+      <title>RSNB - Home</title>
       <Header
         totalQuantity={totalQuantity}
         products={products}
