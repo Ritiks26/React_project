@@ -1,12 +1,12 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import { ScrollToTop } from "./Components/ScrollToTop";
 import { HomePage } from "./pages/Home/HomePage";
 import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
 import { LoginPage } from "./Components/LoginPage";
-import { useEffect, useState } from "react";
 import { CheckfullProduct } from "./pages/Check-product/CheckfullProduct";
 import "./App.css";
-import axios from "axios";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -14,33 +14,34 @@ function App() {
   const [productsMoreLast, setProductsMoreLast] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://react-products-backend-obvl.onrender.com/products")
-      .then((response) => {
-        setProducts(response.data);
-      });
-
-    axios
-      .get("https://react-products-backend-obvl.onrender.com/products-More")
-      .then((response) => {
-        setProductsMore(response.data);
-      });
-
-    axios
-      .get(
+    Promise.all([
+      axios.get("https://react-products-backend-obvl.onrender.com/products"),
+      axios.get(
+        "https://react-products-backend-obvl.onrender.com/products-More"
+      ),
+      axios.get(
         "https://react-products-backend-obvl.onrender.com/products-more-last"
-      )
-      .then((response) => {
-        setProductsMoreLast(response.data);
-      });
-
-    axios
-      .get("https://react-products-backend-obvl.onrender.com/new-arrivals")
-      .then((response) => {
-        setNewArrivals(response.data);
-      });
+      ),
+      axios.get(
+        "https://react-products-backend-obvl.onrender.com/new-arrivals"
+      ),
+    ]).then(
+      ([
+        productsResponse,
+        productsMoreResponse,
+        productsMoreLastResponse,
+        newArrivalsResponse,
+      ]) => {
+        setProducts(productsResponse.data);
+        setProductsMore(productsMoreResponse.data);
+        setProductsMoreLast(productsMoreLastResponse.data);
+        setNewArrivals(newArrivalsResponse.data);
+        setLoading(false);
+      }
+    );
   }, []);
 
   const loadCart = async () => {
@@ -73,6 +74,8 @@ function App() {
               productsMoreLast={productsMoreLast}
               newArrivals={newArrivals}
               loadCart={loadCart}
+              loading={loading}
+              setLoading={setLoading}
             />
           }
         />

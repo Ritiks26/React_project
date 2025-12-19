@@ -17,6 +17,8 @@ export function HomePage({
   productsMore,
   productsMoreLast,
   newArrivals,
+  loading,
+  setLoading,
 }) {
   return (
     <>
@@ -28,7 +30,12 @@ export function HomePage({
         productsMoreLast={productsMoreLast}
       />
       <MarqueePictures />
-      <ReusableProductsContainer title="TRENDING NOW" products={products} />
+      <ReusableProductsContainer
+        title="TRENDING NOW"
+        products={products}
+        loading={loading}
+        setLoading={setLoading}
+      />
       <GlowingSuggestions />
       <GlowingSuggestionsRight />
       <ReusableProductsContainer
